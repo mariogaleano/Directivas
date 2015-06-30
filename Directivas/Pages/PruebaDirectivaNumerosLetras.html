@@ -1,6 +1,9 @@
 ﻿<div ng-controller="controller as vm" class="container-fluid">
-    <h1>Sólo números y letras</h1>
-    <p>Esta directiva <u>no tiene una plantilla</u>, solamente válida que el input sólo tenga números y letras</p>
+    <h1>
+        Sólo números y letras
+        <br />
+        <small>Esta directiva <u>no tiene una plantilla</u>, solamente válida que el input sólo tenga números y letras</small>
+    </h1>
     <form name="formulario" class="form" novalidate>
         <div class="control-group">
             <input type="text" name="valor" ng-model="Edad" only-letters-integers class="form-control" />
