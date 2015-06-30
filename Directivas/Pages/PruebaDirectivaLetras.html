@@ -1,0 +1,22 @@
+﻿<div ng-controller="controller as vm" class="container-fluid">
+    <h1>Sólo letras</h1>
+    <p>Esta directiva <u>no tiene una plantilla</u>, solamente válida que el input sólo tenga letras</p>
+    <form name="formulario" class="form" novalidate>
+        <div class="control-group">
+            <input type="text" name="valor" ng-model="Edad" only-letters class="form-control" />
+            <div ng-show="formulario.valor.$invalid" class="alert alert-danger">
+                Sólo se aceptan letras
+            </div>
+        </div>
+        <input type="button" value="Aceptar" class="btn btn-primary" ng-disabled="formulario.$invalid" />
+    </form>
+
+    <pre class="pre-scrollable">
+        &lt;div class="control-group"&gt;
+        &lt;input type="text" name="valor" ng-model="Edad" only-letters class="form-control" /&gt;
+        &lt;div ng-show="formulario.valor.&invalid"&gt;
+                Sólo se aceptan letras
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </pre>
+</div>

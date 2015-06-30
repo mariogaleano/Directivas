@@ -1,0 +1,26 @@
+﻿<div ng-controller="controller as vm" class="container-fluid">
+    <h1>Sólo números</h1>
+    <p>Esta directiva <u>no tiene una plantilla</u>, solamente válida que el input sólo tenga números</p>
+
+    <form name="formulario" class="form" novalidate>
+        <div class="control-group">
+            <input type="text" name="valorNumero" ng-model="Edad" only-integers class="form-control" />
+            <div ng-show="formulario.valorNumero.$invalid" class="alert alert-danger">
+                Sólo se aceptan números
+            </div>
+        </div>
+        <input type="button" value="Aceptar" class="btn btn-primary" ng-disabled="formulario.$invalid" />
+    </form>
+
+    <pre class="pre-scrollable">
+            &lt;div class="control-group"&gt;
+            &lt;input type="text" name="valorNumero" ng-model="Edad" only-integers class="form-control" /&gt;
+            &lt;div ng-show="formulario.valorNumero.$invalid"&gt;
+                    Sólo se aceptan números
+            &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;input type="button" value="Aceptar" class="btn btn-primary" ng-disabled="formulario.$invalid" /&gt;
+        </pre>
+
+</div>
+

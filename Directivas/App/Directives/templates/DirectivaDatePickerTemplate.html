@@ -1,0 +1,18 @@
+﻿<div class="control-group">
+    <label for="{{'scDatePicker' + id}}">{{ label }}</label>
+    <input type="text"
+           clear-text="Limpiar"
+           current-text="Hoy"
+           ng-focus="open($event)"
+           close-text="cerrar"
+           ng-required="true"
+           datepicker-options="dateOptions"
+           min="minDate"
+           ng-model="Model"
+           is-open="opened"
+           datepicker-popup="dd-MMM-yyyy"
+           class="form-control"
+           ng-attr-id="{{'scDatePicker' + id}}" ng-attr-name="{{'scDatePicker' + id}}">
+
+    <a ng-click="open($event)" class="pull-left" style="cursor:pointer"><i class="glyphicon glyphicon-calendar"></i></a>
+</div>

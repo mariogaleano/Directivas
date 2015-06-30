@@ -1,0 +1,38 @@
+﻿<div class="container-fluid" ng-controller="controller as vm">
+    <h1> Prueba full</h1>
+
+    <sc-Label Texto="Label SC">Label SC</sc-Label>
+
+    <form name="formulario" novalidate>
+
+        <sc-input-label data-nombre="Nombre" ng-model="vm.persona.Nombre" only-letters data-formname="formulario" placeholder="Nombre de la persona" ng-required></sc-input-label>
+        <div ng-show="formulario.scInputNombre.$invalid" class="alert alert-danger alert-dismissable">
+            Sólo se aceptan letras
+        </div>       
+
+        <sc-input-label data-nombre="Apellido" ng-model="vm.persona.Apellido" only-letters data-formname="formulario" placeholder="Apellido de la persona" ng-required></sc-input-label>
+        <!--<p ng-show="formulario.scInputApellido.$invalid" class="help-block">
+            Sólo se aceptan letras
+        </p>--> 
+
+        <sc-input-label-number only-Integers data-nombre="Edad" ng-class="{ 'has-error' : formulario.Edad.$invalid }" ng-model="vm.persona.Edad" only-numbers data-formname="formulario" placeholder="Edad de la persona" ng-required></sc-input-label-number>
+        <!--<p ng-show="formulario.scInputEdad.$invalid" class="help-block">
+            Sólo se aceptan números externo
+        </p>--> 
+
+        {{ 'Invalido: ' +  formulario.$invalid | json }}
+        <br/>
+        <input type="button" value="Aceptar" ng-click="vm.VerValores()" class="btn btn-primary" ng-disabled="formulario.$invalid"/>
+    </form>
+
+    <div class="alert alert-info" ng-show="vm.nombreCompleto">
+        {{ vm.nombreCompleto }}
+    </div>
+
+
+
+   
+
+   
+
+</div>
