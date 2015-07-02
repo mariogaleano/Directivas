@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap']);
+    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap', 'ui.mask']);
 
     angular.module('sc.directivas').config(function ($stateProvider, $urlRouterProvider) {
        
@@ -37,6 +37,10 @@
         state('picker', {
             url: "/picker",
             templateUrl: "Pages/PruebaDirectivaDatePicker.html"
+        }).
+        state('telefono', {
+            url: "/telefono",
+            templateUrl: "Pages/PruebaDirectivaPhone.html"
         });
     });
 

@@ -11,7 +11,7 @@
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-
+   
 </head>
 <body ng-controller="mainController as vm">
     <nav class="navbar navbar-default">
@@ -37,19 +37,17 @@
                     <li><a ui-sref="numeros">Números</a></li>
                     <li><a ui-sref="inputlabel">Input con Label</a></li>
                     <li><a ui-sref="picker">Datepicker</a></li>
+                    <li><a ui-sref="telefono">T&eacute;lefono</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   
-
-    <hr/>
-
 
     <div ui-view class="container"></div>
 
 
+    <script src="Scripts/mask.js"></script>
 
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
@@ -62,5 +60,8 @@
     <script src="App/Directives/scOnlyLettersIntegersDirective.js"></script>
     <script src="App/Directives/scOnlyIntegersDirective.js"></script>    
     <script src="App/Directives/scDatePicker.js"></script>
+    <script src="App/Directives/scPhoneMask.js"></script>
+
+   
 </body>
 </html>

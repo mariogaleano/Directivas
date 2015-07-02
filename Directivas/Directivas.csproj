@@ -41,6 +41,11 @@
   <ItemGroup>
     <Content Include="App\Controllers\controller.js" />
     <Content Include="App\Controllers\mainController.js" />
+    <Content Include="App\Directives\scPhoneMask.js" />
+    <Content Include="App\Directives\templates\DirectivaCellTemplate.html" />
+    <Content Include="App\Directives\templates\DirectivaPhoneTemplate.html" />
+    <Content Include="Pages\PruebaDirectivaPhone.html" />
+    <Content Include="Scripts\mask.js" />
     <Content Include="App\Directives\scDatePicker.js" />
     <Content Include="App\Directives\scInputLabelNumber.js" />
     <Content Include="App\Directives\scInputLabel.js" />

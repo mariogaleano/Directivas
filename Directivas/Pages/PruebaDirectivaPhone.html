@@ -1,0 +1,26 @@
+﻿<div class="container" ng-init="phonenumber = 46596254;cellphone=3159875622">
+
+    <h1>
+        T&eacute;lefono
+        <br />
+        <small>Esta directiva  <u>tiene una plantilla</u>, y genera un input con una m&aacute;scara</small>
+    </h1>
+
+    <div>
+        <h3>Fijo</h3>
+        <sc-phone-mask ng-model="phonenumber" tipo="Phone"></sc-phone-mask>
+        <span ng-bind="phonenumber"></span>
+    </div>
+
+    <div>
+        <h3>Celular</h3>
+        <sc-phone-mask ng-model="cellphone" tipo="Cell"></sc-phone-mask>
+        <span ng-bind="cellphone"></span>
+    </div>
+
+    <pre>
+        &lt;sc-phone-mask ng-model="phonenumber" tipo="Phone"&gt;&lt;/sc-phone-mask&gt;
+
+        &lt;sc-phone-mask ng-model="cellphone" tipo="Cell"&gt;&lt;/sc-phone-mask&gt;
+    </pre>
+</div>
