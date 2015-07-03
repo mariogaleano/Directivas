@@ -5,17 +5,38 @@
         <br />
         <small>Esta directiva <u>tiene una plantilla</u>, genera un input de tipo "text" con un label asociado</small>
     </h1>
+
+    <h3>Sin validación</h3>
     <sc-input-label id="nombrecompleto"
                     label="Nombre completo"
                     ng-model="vm.persona.Nombre"
                     placeholder="Nombre de la persona"
                     ng-required>
     </sc-input-label>
+    <pre class="pre-scrollable">
+        &lt;sc-input-label id="nombrecompleto" label="Nombre completo" ng-model="vm.persona.Nombre" placeholder="Nombre de la persona" 
+        ng-required&gt;&lt;/sc-input-label&gt;
+    </pre>
+
+
+
+    <h3>Con validación</h3>
+    <form name="formulario" novalidate ng-init="vm.persona.NombreVal = 'julio1'">
+        <sc-input-label id="nombrecompletoval"
+                        label="Nombre completo"
+                        ng-model="vm.persona.NombreVal"
+                        placeholder="Nombre de la persona"
+                        ng-required only-letters
+                        haserror="formulario.scInputnombrecompletoval.$invalid"                        
+                        errormessage="Sólo se permiten letras">
+        </sc-input-label>
+    </form>
 
 
     <pre class="pre-scrollable">
         &lt;sc-input-label id="nombrecompleto" label="Nombre completo" ng-model="vm.persona.Nombre" placeholder="Nombre de la persona" 
-        ng-required&gt;&lt;/sc-input-label&gt;
+        ng-required haserror="formulario.scInputnombrecompletoval.$invalid"
+        errormessage="Debe ingresar el nombre" only-letters&gt;&lt;/sc-input-label&gt;
     </pre>
 
 </div>

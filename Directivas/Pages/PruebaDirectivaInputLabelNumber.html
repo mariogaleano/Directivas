@@ -1,0 +1,42 @@
+﻿<div class="cotainer-fluid">
+
+    <h1>
+        Sólo letras
+        <br />
+        <small>Esta directiva <u>tiene una plantilla</u>, genera un input de tipo "number" con un label asociado</small>
+    </h1>
+
+    <h3>Sin validación</h3>
+    <sc-input-label-number id="edad"
+                    label="Nombre completo"
+                    ng-model="vm.persona.Edad"
+                    placeholder="Edad de la persona"
+                    ng-required>
+    </sc-input-label-number>
+    <pre class="pre-scrollable">
+        &lt;sc-input-label id="nombrecompleto" label="Nombre completo" ng-model="vm.persona.Nombre" placeholder="Nombre de la persona" 
+        ng-required&gt;&lt;/sc-input-label&gt;
+    </pre>
+
+
+
+    <h3>Con validación</h3>
+    <form name="formulario" novalidate ng-init="vm.persona.EdadVal = 1">
+        <sc-input-label-number id="edad"
+                        label="Nombre completo"
+                        ng-model="vm.persona.EdadVal"
+                        placeholder="Edad de la persona"
+                        ng-required only-integers
+                        haserror="formulario.scInputedad.$invalid"                        
+                        errormessage="Sólo se permiten números">
+        </sc-input-label-number>
+    </form>
+
+
+    <pre class="pre-scrollable">
+        &lt;sc-input-labelnumber id="nombrecompleto" label="Nombre completo" ng-model="vm.persona.Nombre" placeholder="Nombre de la persona" 
+        ng-required haserror="formulario.scInputnombrecompletoval.$invalid"
+        errormessage="Sólo se permiten números" only-integers&gt;&lt;/sc-input-label-number&gt;
+    </pre>
+
+</div>

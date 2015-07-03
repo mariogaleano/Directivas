@@ -45,6 +45,7 @@
     <Content Include="App\Directives\templates\DirectivaCellTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaPhoneTemplate.html" />
     <Content Include="Content\textAngular.css" />
+    <Content Include="Pages\PruebaDirectivaInputLabelNumber.html" />
     <Content Include="Pages\PruebaDirectivaPhone.html" />
     <Content Include="Pages\PruebaDirectivaTextAngular.html" />
     <Content Include="Scripts\mask.js" />

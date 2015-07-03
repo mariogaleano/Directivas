@@ -16,7 +16,8 @@
                 id: "@",
                 label: "@",
                 haserror: '=',
-                errormessage : '@'
+                errormessage: '@',
+                emptymessage : '@'
             },
             restrict: 'EA',
             transculde:'element',
