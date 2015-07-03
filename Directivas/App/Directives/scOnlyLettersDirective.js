@@ -17,7 +17,7 @@ function soloTexto($parse) {
                 ctrl.$setValidity('onlyLetters', true);
                 return true;
             }
-            var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ]*$/;
+            var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ_ ]*$/;
             var resultado = TEXT_REGEX.test(valor);          
 
             if (resultado) {                
