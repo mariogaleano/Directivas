@@ -1,4 +1,11 @@
-﻿<div class="control-group">
+﻿
+<div class="control-group" ng-class="{ 'has-error' : haserror }">
     <label for="{{'scInput' + id}}">{{ label }}</label>
     <input type="number" ng-model="value" class="form-control" ng-attr-id="{{'scInput' + id}}" ng-attr-name="{{'scInput' + id}}" />
+
+
+    <div ng-show="haserror" class="alert alert-danger">
+        {{errormessage}}
+    </div> 
+
 </div>

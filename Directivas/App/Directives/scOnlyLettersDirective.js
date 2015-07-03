@@ -14,17 +14,17 @@ function soloTexto($parse) {
         scope.$watch(attrs.ngModel, function (valor) {
             
             if (ctrl.$isEmpty(valor)) {
-                ctrl.$setValidity('valor', true);
+                ctrl.$setValidity('onlyLetters', true);
                 return true;
             }
             var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ]*$/;
             var resultado = TEXT_REGEX.test(valor);          
 
             if (resultado) {                
-                ctrl.$setValidity('valor', true);
+                ctrl.$setValidity('onlyLetters', true);
                 return true;
             } else {                
-                ctrl.$setValidity('valor', false);
+                ctrl.$setValidity('onlyLetters', false);
                 return true;
             }
         });

@@ -1,28 +1,41 @@
 ﻿<div class="container-fluid" ng-controller="controller as vm">
-    <h1> Prueba full</h1>
+    <h1> Prueba completa</h1>
 
-    <sc-Label Texto="Label SC">Label SC</sc-Label>
+
 
     <form name="formulario" novalidate>
 
-        <sc-input-label data-nombre="Nombre" ng-model="vm.persona.Nombre" only-letters data-formname="formulario" placeholder="Nombre de la persona" ng-required></sc-input-label>
-        <div ng-show="formulario.scInputNombre.$invalid" class="alert alert-danger alert-dismissable">
-            Sólo se aceptan letras
-        </div>       
+        <sc-input-label label="Nombre"
+                        id="Nombre"
+                        data-nombre="Nombre"
+                        haserror="formulario.scInputNombre.$invalid"
+                        ng-model="vm.persona.Nombre"
+                        only-letters
+                        placeholder="Nombre de la persona"
+                        ng-required
+                        errormessage="Sólo se aceptar letras"></sc-input-label>
 
-        <sc-input-label data-nombre="Apellido" ng-model="vm.persona.Apellido" only-letters data-formname="formulario" placeholder="Apellido de la persona" ng-required></sc-input-label>
-        <!--<p ng-show="formulario.scInputApellido.$invalid" class="help-block">
-            Sólo se aceptan letras
-        </p>--> 
 
-        <sc-input-label-number only-Integers data-nombre="Edad" ng-class="{ 'has-error' : formulario.Edad.$invalid }" ng-model="vm.persona.Edad" only-numbers data-formname="formulario" placeholder="Edad de la persona" ng-required></sc-input-label-number>
-        <!--<p ng-show="formulario.scInputEdad.$invalid" class="help-block">
-            Sólo se aceptan números externo
-        </p>--> 
+        <sc-input-label label="Apellido"
+                        id="Apellido"
+                        data-nombre="Apellido"
+                        only-letters
+                        haserror="formulario.scInputApellido.$invalid"
+                        ng-model="vm.persona.Apellido"
+                        placeholder="Apellido de la persona"
+                        ng-required
+                        errormessage="Sólo se aceptar letras"></sc-input-label>
 
-        {{ 'Invalido: ' +  formulario.$invalid | json }}
-        <br/>
-        <input type="button" value="Aceptar" ng-click="vm.VerValores()" class="btn btn-primary" ng-disabled="formulario.$invalid"/>
+        <sc-input-label-number id="Edad"
+                               label="Edad"
+                               data-nombre="Edad"
+                               haserror="formulario.scInputEdad.$invalid"
+                               ng-model="vm.persona.Edad"
+                               placeholder="Edad de la persona"
+                               ng-required
+                               errormessage="solo se aceptan números enteros mayores a cero"></sc-input-label-number>
+        <br />
+        <input type="button" value="Aceptar" ng-click="vm.VerValores()" class="btn btn-primary" ng-disabled="formulario.$invalid" />
     </form>
 
     <div class="alert alert-info" ng-show="vm.nombreCompleto">
@@ -30,9 +43,43 @@
     </div>
 
 
+    <pre class="pre-scrollable">
+        &lt;form name="formulario" novalidate&gt;
+        &lt;sc-input-label label="Nombre" 
+                        id="Nombre" 
+                        data-nombre="Nombre"  
+                        haserror="formulario.scInputNombre.$invalid" 
+                        ng-model="vm.persona.Nombre" 
+                        only-letters 
+                        placeholder="Nombre de la persona" 
+                        ng-required
+                        errormessage="Sólo se aceptar letras"&gt;&lt;/sc-input-label&gt;
+         
+        &lt;sc-input-label label="Apellido" 
+                        id="Apellido" 
+                        data-nombre="Apellido" 
+                        only-letters 
+                        haserror="formulario.scInputApellido.$invalid"
+                        ng-model="vm.persona.Apellido" 
+                        placeholder="Apellido de la persona" 
+                        ng-required
+                        errormessage="Sólo se aceptar letras"&gt;&lt;/sc-input-label&gt;     
+        
+        &lt;sc-input-label-number 
+                               id="Edad" 
+                               label="Edad" 
+                               data-nombre="Edad" 
+                               haserror="formulario.scInputEdad.$invalid"
+                               ng-model="vm.persona.Edad" 
+                               placeholder="Edad de la persona" 
+                               ng-required
+                               errormessage="solo se aceptan números enteros mayores a cero"&gt;&lt;/sc-input-label-number&gt;       
+        &lt;br/&gt;
+        &lt;input type="button" value="Aceptar" ng-click="vm.VerValores()" class="btn btn-primary" ng-disabled="formulario.$invalid"/&gt;
+    &lt;/form&gt;
+    </pre>
 
-   
 
-   
+
 
 </div>

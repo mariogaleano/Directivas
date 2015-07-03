@@ -5,16 +5,18 @@
       .module('sc.directivas')
       .directive('scInputLabelNumber', directivaInputLabelNumber);
 
-    directivaInputLabelNumber.$inject = ['$window'];
+    directivaInputLabelNumber.$inject = ['$compile'];
 
-    function directivaInputLabelNumber($window) {
+    function directivaInputLabelNumber($compile) {
         var directive = {
             require: 'ngModel',
             link: link,
             scope: {
                 value: '=ngModel',
                 id: "@",
-                label: "@"
+                label: "@",
+                haserror: '=',
+                errormessage : '@'
             },
             restrict: 'EA',
             transculde:'element',
@@ -31,20 +33,14 @@
             input.attr("placeholder", attrs.nombre);
             if (attrs.ngRequired != undefined) {
                 input.attr("required", "");
-            }
-
-            
+            }            
 
             if (attrs.onlyIntegers != undefined) {
                 element.find(":input").attr("only-integers", "");
-            }
+            }            
 
-            var formulario = element.parents("form:first");
-            if (formulario != undefined) {
-                
-                var nombre = formulario[0].name;
-                scope.condicion = nombre + '.scInput' + scope.Label + '.$invalid';
-            }
+            var x = angular.element(input);
+            $compile(x)(scope);
         }
     }
 })();
