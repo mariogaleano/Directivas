@@ -1,6 +1,6 @@
 ﻿angular.module('sc.directivas').directive('onlyLetters', soloTexto);
 
-var TEXT_REGEX = /^[a-zA-Z]*$/;
+
 
 function soloTexto($parse) {
     var directiva = {
@@ -17,6 +17,7 @@ function soloTexto($parse) {
                 ctrl.$setValidity('valor', true);
                 return true;
             }
+            var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ]*$/;
             var resultado = TEXT_REGEX.test(valor);          
 
             if (resultado) {                
