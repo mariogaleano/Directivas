@@ -44,7 +44,9 @@
     <Content Include="App\Directives\scPhoneMask.js" />
     <Content Include="App\Directives\templates\DirectivaCellTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaPhoneTemplate.html" />
+    <Content Include="Content\textAngular.css" />
     <Content Include="Pages\PruebaDirectivaPhone.html" />
+    <Content Include="Pages\PruebaDirectivaTextAngular.html" />
     <Content Include="Scripts\mask.js" />
     <Content Include="App\Directives\scDatePicker.js" />
     <Content Include="App\Directives\scInputLabelNumber.js" />
@@ -70,6 +72,9 @@
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\textAngular-rangy.min.js" />
+    <Content Include="Scripts\textAngular-sanitize.min.js" />
+    <Content Include="Scripts\textAngular.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
