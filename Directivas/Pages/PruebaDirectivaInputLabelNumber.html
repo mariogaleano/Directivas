@@ -8,7 +8,7 @@
 
     <h3>Sin validación</h3>
     <sc-input-label-number id="edad"
-                    label="Nombre completo"
+                    label="Edad"
                     ng-model="vm.persona.Edad"
                     placeholder="Edad de la persona"
                     ng-required>
@@ -23,7 +23,7 @@
     <h3>Con validación</h3>
     <form name="formulario" novalidate ng-init="vm.persona.EdadVal = 1">
         <sc-input-label-number id="edad"
-                        label="Nombre completo"
+                        label="Edad"
                         ng-model="vm.persona.EdadVal"
                         placeholder="Edad de la persona"
                         ng-required only-integers
