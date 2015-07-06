@@ -41,13 +41,19 @@
   <ItemGroup>
     <Content Include="App\Controllers\controller.js" />
     <Content Include="App\Controllers\mainController.js" />
+    <Content Include="App\Directives\scSelectLabel.js" />
     <Content Include="App\Directives\scPhoneMask.js" />
     <Content Include="App\Directives\templates\DirectivaCellTemplate.html" />
+    <Content Include="App\Directives\templates\DirectivaSelectLabelTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaPhoneTemplate.html" />
     <Content Include="Content\textAngular.css" />
     <Content Include="Pages\PruebaDirectivaInputLabelNumber.html" />
     <Content Include="Pages\PruebaDirectivaPhone.html" />
+    <Content Include="Pages\PruebaDirectivaSelectLabel.html" />
     <Content Include="Pages\PruebaDirectivaTextAngular.html" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\mask.js" />
     <Content Include="App\Directives\scDatePicker.js" />
     <Content Include="App\Directives\scInputLabelNumber.js" />
@@ -76,6 +82,7 @@
     <Content Include="Scripts\textAngular-rangy.min.js" />
     <Content Include="Scripts\textAngular-sanitize.min.js" />
     <Content Include="Scripts\textAngular.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -99,13 +106,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

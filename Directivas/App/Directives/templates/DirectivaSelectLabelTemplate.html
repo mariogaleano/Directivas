@@ -1,0 +1,20 @@
+﻿<div class="control-group" ng-class="{ 'has-error' : haserror }">    
+
+    <label for="{{'scInput' + id}}">{{ label }}</label>
+
+
+    <select
+    ng-options="a[optValue] as a[optDescription] for a in opciones"
+    ng-model="value" class="form-control"
+    ng-attr-id="{{'scSelect' + id}}"
+    ng-attr-name="{{'scSelect' + id}}">
+        <option value="" selected>Selecccione...</option> 
+    </select>
+    
+   
+
+    <div ng-show="haserror" class="alert alert-danger">
+        {{errormessage}}
+    </div>
+
+</div>

@@ -3,9 +3,10 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
@@ -21,7 +22,7 @@
     <script src='Scripts/textAngular.min.js'></script>
 
 
-   
+
 </head>
 <body ng-controller="mainController as vm">
     <nav class="navbar navbar-default">
@@ -34,19 +35,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand"  ui-sref="full">Home</a>
+                <a class="navbar-brand" ui-sref="full">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="full">Prueba todos los componentes</a></li>
-                    <li><a ui-sref="label">Directiva label</a></li>                    
+                    <li><a ui-sref="label">Directiva label</a></li>
                     <li><a ui-sref="numerosletras">Números y letras</a></li>
                     <li><a ui-sref="letras">Letras</a></li>
                     <li><a ui-sref="numeros">Números</a></li>
                     <li><a ui-sref="inputlabel">Input con Label</a></li>
                     <li><a ui-sref="inputnumberlabel">Input númerico con Label</a></li>
+                    <li><a ui-sref="select">Select con Label</a></li>
                     <li><a ui-sref="picker">Datepicker</a></li>
                     <li><a ui-sref="telefono">T&eacute;lefono</a></li>
                     <li><a ui-sref="richtext">Texto enriquecido</a></li>
@@ -54,8 +56,7 @@
             </div>
         </div>
     </nav>
-
-   
+    
 
     <div ui-view class="container"></div>
 
@@ -71,10 +72,9 @@
     <script src="App/Directives/scInputLabelNumber.js"></script>
     <script src="App/Directives/scOnlyLettersDirective.js"></script>
     <script src="App/Directives/scOnlyLettersIntegersDirective.js"></script>
-    <script src="App/Directives/scOnlyIntegersDirective.js"></script>    
+    <script src="App/Directives/scOnlyIntegersDirective.js"></script>
     <script src="App/Directives/scDatePicker.js"></script>
     <script src="App/Directives/scPhoneMask.js"></script>
-
-   
+    <script src="App/Directives/scSelectLabel.js"></script>
 </body>
 </html>

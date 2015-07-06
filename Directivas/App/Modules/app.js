@@ -49,6 +49,10 @@
          state('richtext', {
              url: "/richtext",
              templateUrl: "Pages/PruebaDirectivaTextAngular.html"
+         }).
+         state('select', {
+             url: "/select",
+             templateUrl: "Pages/PruebaDirectivaSelectLabel.html"
          });
     });
 

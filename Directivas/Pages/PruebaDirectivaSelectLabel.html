@@ -1,0 +1,54 @@
+﻿<div class="cotainer-fluid">
+
+    <h1>
+        Select
+        <br />
+        <small>Esta directiva <u>tiene una plantilla</u>, genera un select con un label asociado</small>
+    </h1>
+
+    <h3>Sin validación</h3>
+    <sc-select-label id="opc1" label="Opciones" ng-model="vm.data" opciones="vm.options"
+                     opt-value="id" opt-description="valor"></sc-select-label>
+    <pre class="pre-scrollable">
+        &lt;sc-select-label 
+            id="opc1" 
+            label="Opciones" 
+            ng-model="vm.data" 
+            opciones="vm.options"
+            opt-value="id" 
+            opt-description="valor"&gt;
+        &lt;/sc-select-label&gt;
+    </pre>
+
+
+
+    <h3>Con validación</h3>
+    <form name="formulario">
+        <sc-select-label id="opc2"
+                         label="Opciones del select"
+                         ng-model="vm.data1"
+                         opciones="vm.options"
+                         haserror="formulario.scSelectopc2.$invalid"
+                         errormessage="seleccione la opción...."
+                         opt-value="id"
+                         opt-description="valor"
+                         ng-required="true">
+        </sc-select-label>
+        <input type="button" value="Aceptar" class="btn btn-primary" ng-disabled="formulario.scSelectopc2.$invalid" />
+    </form>
+
+
+    <pre class="pre-scrollable">
+&lt;sc-select-label id="opc2"
+    label="Opciones"
+    ng-model="vm.data1"
+    opciones="vm.options"
+    haserror="formulario.scSelectopc2.$invalid"
+    errormessage="seleccione la opción...."
+    opt-value="id"
+    opt-description="valor"
+    ng-required="true"&gt;
+&lt;/sc-select-label&gt;
+    </pre>
+
+</div>
