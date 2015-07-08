@@ -1,23 +1,18 @@
 ﻿(function() {
     'use strict';
 
-    //<input type="text" ng-model="celnumber" ui-mask="99 99 99 99 99" />
-
     angular
         .module('sc.directivas')
         .directive('scPhoneMask', scPhoneMask);
 
-    
+    scPhoneMask.$inject = ['$http', '$templateCache', '$compile', '$parse'];
     
     function scPhoneMask($http, $templateCache, $compile, $parse) {
-        // Usage:
-        //     <scPhoneMask></scPhoneMask>
-        // Creates:
-        // 
+        
         var directive = {
             require: ['ngModel'],
             restrict: 'E',
-            //templateUrl: 'app/Directives/Templates/DirectivaPhoneTemplate.html',
+            
             scope: {
                 value: '=ngModel',
             },

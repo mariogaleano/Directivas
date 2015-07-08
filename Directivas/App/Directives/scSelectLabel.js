@@ -5,7 +5,7 @@
       .module('sc.directivas')
       .directive('scSelectLabel', directivaInputLabel);
 
-    //directivaInputLabel.$inject = ['$compile'];
+    directivaInputLabel.$inject = ['$compile'];
 
     function directivaInputLabel($compile) {
         var directive = {
@@ -31,11 +31,7 @@
 
             if (attrs.ngRequired != undefined) {
 
-                console.log(element.children()[1]);
-
                 var selectctrl = element.children()[1];
-
-
 
                 var control = angular.element(selectctrl);
                 control.attr("required", true);

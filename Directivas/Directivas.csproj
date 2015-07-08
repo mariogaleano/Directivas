@@ -41,16 +41,83 @@
   <ItemGroup>
     <Content Include="App\Controllers\controller.js" />
     <Content Include="App\Controllers\mainController.js" />
+    <Content Include="App\Directives\scDatePicker.min.js">
+      <DependentUpon>scDatePicker.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scInputLabel.min.js">
+      <DependentUpon>scInputLabel.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scInputLabelNumber.min.js">
+      <DependentUpon>scInputLabelNumber.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scLabel.min.js">
+      <DependentUpon>scLabel.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyIntegersDirective.min.js">
+      <DependentUpon>scOnlyIntegersDirective.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyLettersDirective.min.js">
+      <DependentUpon>scOnlyLettersDirective.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyLettersIntegersDirective.min.js">
+      <DependentUpon>scOnlyLettersIntegersDirective.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scPhoneMask.min.js">
+      <DependentUpon>scPhoneMask.js</DependentUpon>
+    </Content>
     <Content Include="App\Directives\scSelectLabel.js" />
     <Content Include="App\Directives\scPhoneMask.js" />
+    <Content Include="App\Directives\scSelectLabel.min.js">
+      <DependentUpon>scSelectLabel.js</DependentUpon>
+    </Content>
     <Content Include="App\Directives\templates\DirectivaCellTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaSelectLabelTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaPhoneTemplate.html" />
+    <Content Include="App\Modules\app - release.js" />
+    <Content Include="App\Modules\app - release.min.js">
+      <DependentUpon>app - release.js</DependentUpon>
+    </Content>
+    <Content Include="App\Modules\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="Content\textAngular.css" />
     <Content Include="Pages\PruebaDirectivaInputLabelNumber.html" />
     <Content Include="Pages\PruebaDirectivaPhone.html" />
     <Content Include="Pages\PruebaDirectivaSelectLabel.html" />
     <Content Include="Pages\PruebaDirectivaTextAngular.html" />
+    <Content Include="App\Directives\scDatePicker.min.js.map">
+      <DependentUpon>scDatePicker.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scInputLabelNumber.min.js.map">
+      <DependentUpon>scInputLabelNumber.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scLabel.min.js.map">
+      <DependentUpon>scLabel.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyIntegersDirective.min.js.map">
+      <DependentUpon>scOnlyIntegersDirective.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyLettersDirective.min.js.map">
+      <DependentUpon>scOnlyLettersDirective.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scOnlyLettersIntegersDirective.min.js.map">
+      <DependentUpon>scOnlyLettersIntegersDirective.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scPhoneMask.min.js.map">
+      <DependentUpon>scPhoneMask.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scSelectLabel.min.js.map">
+      <DependentUpon>scSelectLabel.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Modules\app.min.js.map">
+      <DependentUpon>app.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Directives\scInputLabel.min.js.map">
+      <DependentUpon>scInputLabel.min.js</DependentUpon>
+    </Content>
+    <Content Include="App\Modules\app - release.min.js.map">
+      <DependentUpon>app - release.min.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

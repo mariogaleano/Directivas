@@ -2,7 +2,7 @@
 
 
 
-function soloTexto($parse) {
+function soloTexto() {
     var directiva = {
         require: 'ngModel',
         link: link,

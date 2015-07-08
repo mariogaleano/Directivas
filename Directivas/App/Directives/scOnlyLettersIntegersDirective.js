@@ -2,7 +2,7 @@
 
 var VALID_REGEX = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
 
-function soloTexto($parse) {
+function soloTexto() {
     var directiva = {
         require: 'ngModel',
         link: link,
@@ -17,9 +17,7 @@ function soloTexto($parse) {
                 ctrl.$setValidity('onlyLettersIntegers', true);
                 return true;
             }
-            var resultado = VALID_REGEX.test(valor);
-
-            console.log(resultado);
+            var resultado = VALID_REGEX.test(valor);            
 
             if (resultado) {                
                 ctrl.$setValidity('onlyLettersIntegers', true);

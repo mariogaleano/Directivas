@@ -5,7 +5,7 @@
       .module('sc.directivas')
       .directive('scInputLabel', directivaInputLabel);
 
-    //directivaInputLabel.$inject = ['$compile'];
+    directivaInputLabel.$inject = ['$compile'];
 
     function directivaInputLabel($compile) {
         var directive = {
