@@ -5,28 +5,29 @@
       .module('sc.directivas')
       .directive('scInputLabel', directivaInputLabel);
 
-    directivaInputLabel.$inject = ['$compile'];
+    directivaInputLabel.$inject = ['$compile','$parse'];
 
-    function directivaInputLabel($compile) {
+    function directivaInputLabel($compile,$parse) {
         var directive = {
             require: 'ngModel',
             scope: {
                 value: '=ngModel',
                 id: "@",
                 label: "@",
-                haserror: '=',
-                errormessage: '@'
+                haserror: '=',                
+                requiredmessage: '@'                
             },
             restrict: 'E',
             link: link,
             templateUrl: 'app/Directives/Templates/DirectivaInputLabelTemplate.html',
-            replace: true
+            replace: true            
         };
         return directive;
 
-        function link(scope, element, attrs) {
-            var input = element.find(":input");
+        function link(scope, element, attrs) {            
 
+            var input = element.find(":input");
+            scope.required = false;
             input.attr("placeholder", attrs.placeholder);
 
             if (attrs.onlyLetters != undefined) {
@@ -39,8 +40,9 @@
 
             if (attrs.ngRequired != undefined) {
                 element.find(":input").attr("required", "");
-            }
-
+                scope.required = true;
+            }            
+           
             var x = angular.element(input);
             $compile(x)(scope);
         }

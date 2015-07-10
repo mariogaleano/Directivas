@@ -41,6 +41,11 @@
                         { id: 6, valor: 'Option 6' },
                         { id: 7, valor: 'Option 7' },
                         { id: 8, valor: 'Option 8' }
-                       ];
+        ];
+
+
+        vm.DatosInputLabel = function () {            
+            console.log(new Date());
+        };
     }
 })();
