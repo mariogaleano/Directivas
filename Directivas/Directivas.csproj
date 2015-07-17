@@ -21,6 +21,8 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +46,18 @@
   <ItemGroup>
     <Content Include="App\Controllers\controller.js" />
     <Content Include="App\Controllers\mainController.js" />
+    <Content Include="App\DirectivasSC\Contenedores\scDiv.js" />
+    <Content Include="App\DirectivasSC\scCheckbox.js" />
+    <Content Include="App\DirectivasSC\scCombo.js" />
+    <Content Include="App\DirectivasSC\scFecha.js" />
+    <Content Include="App\DirectivasSC\scHora.js" />
+    <Content Include="App\DirectivasSC\scMoneda.js" />
+    <Content Include="App\DirectivasSC\scNumero.js" />
+    <Content Include="App\DirectivasSC\scRadio.js" />
+    <Content Include="App\DirectivasSC\scTelefono.js" />
+    <Content Include="App\DirectivasSC\scTextoHtml.js" />
+    <Content Include="App\DirectivasSC\scTexto.js" />
+    <Content Include="App\DirectivasSC\scTextoArea.js" />
     <Content Include="App\Directives\scDatePicker.min.js">
       <DependentUpon>scDatePicker.js</DependentUpon>
     </Content>
@@ -191,6 +205,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\DirectivasSC\templates\" />
     <Folder Include="template\" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +241,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
