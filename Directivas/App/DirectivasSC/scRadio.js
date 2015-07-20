@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('sc.directivas')
         .directive('scRadio', scRadio);
 
     scRadio.$inject = ['$window'];

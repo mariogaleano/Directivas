@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('sc.directivas')
         .directive('scTexto', directive1);
 
     scTexto.$inject = ['$window'];
