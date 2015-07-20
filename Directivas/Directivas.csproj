@@ -53,11 +53,16 @@
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
+    <Content Include="App\DirectivasSC\scOnlyLettersDirective.js" />
+    <Content Include="App\DirectivasSC\scOnlyLettersDirective.min.js">
+      <DependentUpon>scOnlyLettersDirective.js</DependentUpon>
+    </Content>
     <Content Include="App\DirectivasSC\scRadio.js" />
     <Content Include="App\DirectivasSC\scTelefono.js" />
     <Content Include="App\DirectivasSC\scTextoHtml.js" />
     <Content Include="App\DirectivasSC\scTexto.js" />
     <Content Include="App\DirectivasSC\scTextoArea.js" />
+    <Content Include="App\DirectivasSC\templates\scTexto.html" />
     <Content Include="App\Directives\scDatePicker.min.js">
       <DependentUpon>scDatePicker.js</DependentUpon>
     </Content>
@@ -135,6 +140,9 @@
     <Content Include="App\Modules\app - release.min.js.map">
       <DependentUpon>app - release.min.js</DependentUpon>
     </Content>
+    <Content Include="App\DirectivasSC\scOnlyLettersDirective.min.js.map">
+      <DependentUpon>scOnlyLettersDirective.min.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -205,7 +213,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\DirectivasSC\templates\" />
     <Folder Include="template\" />
   </ItemGroup>
   <ItemGroup>
