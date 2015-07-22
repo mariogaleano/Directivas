@@ -62,6 +62,7 @@
     <Content Include="App\DirectivasSC\scTextoHtml.js" />
     <Content Include="App\DirectivasSC\scTexto.js" />
     <Content Include="App\DirectivasSC\scTextoArea.js" />
+    <Content Include="App\DirectivasSC\templates\scTextoArea.html" />
     <Content Include="App\DirectivasSC\templates\scTexto.html" />
     <Content Include="App\Directives\scDatePicker.min.js">
       <DependentUpon>scDatePicker.js</DependentUpon>
@@ -144,6 +145,7 @@
       <DependentUpon>scOnlyLettersDirective.min.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="PruebasDirectivasSC.html" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\mask.js" />

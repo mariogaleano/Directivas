@@ -6,7 +6,7 @@
     <script src="Scripts/jquery-2.1.4.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
-    
+
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
@@ -22,7 +22,7 @@
     <script src='Scripts/textAngular.min.js'></script>
 
 
-  
+
 
 </head>
 <body ng-controller="mainController as vm">
@@ -57,34 +57,75 @@
             </div>
         </div>
     </nav>
-    
+
 
     <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola 123-';textonum='hola 123-'">
 
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$invalid}">
-            <sc-texto ng-model="todo" id="Todo" tipo="todo"></sc-texto>
-            <div ng-show="formulario.scInputTodo.$invalid" class="alert alert-danger">
-                de todo 
-            </div>
-        </div>
+        <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
+                    <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
+                    <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
+                       campo requerido
+                    </div>
+                </div>
 
-        <br />
+                <br />
 
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
-            <sc-texto ng-model="texto" id="Texto" tipo="texto"></sc-texto>
-            <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
-                Sólo se aceptan letras
-            </div>
-        </div>
+                <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
+                    <sc-texto ng-model="texto" id="Texto" tipo="texto"></sc-texto>
+                    <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
+                        Sólo se aceptan letras
+                    </div>
+                </div>
 
-        <br />
-
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTextonum.$invalid}">
-            <sc-texto ng-model="textonum" id="Textonum" tipo="textonum"></sc-texto>
+                <br />
+        
+        <!--<div class="control-group" ng-class="{'has-error':formulario.scInputTextonum.$invalid}">
+            <sc-texto ng-model="textonum" id="Textonum" tipo="textonum" ng-required></sc-texto>
             <div ng-show="formulario.scInputTextonum.$invalid" class="alert alert-danger">
                 Sólo se aceptan letras y numeros
             </div>
+        </div>-->
+        <!--<br />
+        <div class="control-group" ng-class="{'has-error':formulario.scAreaValor.$invalid}">
+            <sc-texto-area ng-model="valorlong" id="Valor" ng-required></sc-texto-area>
+            {{valorlong}}
+            <div ng-show="formulario.scAreaValor.$invalid" class="alert alert-danger">
+                Error
+            </div>
         </div>
+        <br />-->
+
+        <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
+            <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
+            {{textov}}
+            <div ng-show="formulario.scAreaTexto.$invalid" class="alert alert-danger">
+                Error 2
+            </div>
+        </div>
+        <br />
+
+        <div class="control-group" ng-class="{'has-error':formulario.scAreaTextoOpcional.$invalid}">
+            <span>Text area opcional</span>
+            <sc-texto-area ng-model="TextoOpcional" id="TextoOpcional" requerido="true"></sc-texto-area>
+            {{TextoOpcional}}
+            <div ng-show="formulario.scAreaTextoOpcional.$invalid" class="alert alert-danger">
+                Texto pcional
+            </div>
+        </div>
+        <br />
+
+        <div class="control-group" ng-class="{'has-error':formulario.msg.$invalid}">
+            <textarea ng-model="msg" name="msg" 
+                     id="msg" requerido="true"></textarea>
+            {{msg}}
+            <div ng-show="formulario.msg.$invalid" class="alert alert-danger">
+                Error 2
+            </div>
+        </div>
+
+
+
+        <button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>
     </form>
 
     <div ui-view class="container"></div>
@@ -107,5 +148,6 @@
     <script src="App/Directives/scSelectLabel.js"></script>
 
     <script src="App/DirectivasSC/scTexto.js"></script>
+    <script src="App/DirectivasSC/scTextoArea.js"></script>
 </body>
 </html>

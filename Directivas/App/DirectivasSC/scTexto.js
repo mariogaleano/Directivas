@@ -15,16 +15,17 @@
             scope: {
                 value: '=ngModel',
                 tipo: '@',//[texto,textonum,todo]
-                id: "@"
+                id: "@",
+                requerido: "="
             },
-            templateUrl: 'app/DirectivasSC/Templates/scTexto.html'           
+            templateUrl: 'app/DirectivasSC/Templates/scTexto.html'
         };
         return directive;
 
         function link(scope, elm, attrs) {
 
-           
             var input = elm.find(":input");
+           
             switch (attrs.tipo) {
                 case tipoInput.todo:
                     break;
@@ -39,7 +40,7 @@
             }
 
             var x = angular.element(input);
-            $compile(x)(scope);          
+            $compile(x)(scope);
         }
     }
 })();
