@@ -52,6 +52,7 @@
     <Content Include="App\DirectivasSC\scCheckbox.js" />
     <Content Include="App\DirectivasSC\scCombo.js" />
     <Content Include="App\DirectivasSC\scFecha.js" />
+    <Content Include="App\DirectivasSC\scFormatoMoneda.js" />
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
@@ -64,6 +65,7 @@
     <Content Include="App\DirectivasSC\scTextoHtml.js" />
     <Content Include="App\DirectivasSC\scTexto.js" />
     <Content Include="App\DirectivasSC\scTextoArea.js" />
+    <Content Include="App\DirectivasSC\templates\scMoneda.html" />
     <Content Include="App\DirectivasSC\templates\scTextoArea.html" />
     <Content Include="App\DirectivasSC\templates\scTexto.html" />
     <Content Include="App\Directives\scDatePicker.min.js">

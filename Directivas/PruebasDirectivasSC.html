@@ -26,11 +26,30 @@
 
 </head>
 <body ng-controller="mainController as vm">
-    
+
+    <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola';textonum='hola 123-'">
+
+       
+        <!--<h4>texto abierto</h4>
+        <h4>texto abierto requerido</h4>
+
+        <h4>texto letras</h4>
+        <h4>texto letras requerido</h4>
+
+        <h4>texto numero</h4>
+        <h4>texto numero requerido</h4>
+
+        <h4>textarea</h4>
+        <h4>textarea requerido</h4>-->
 
 
-    <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola 123-';textonum='hola 123-'">
+        <sc-moneda id="mon" ng-model="valor" requerido="true"></sc-moneda>
+        {{valor}}
+        <div ng-show="formulario.scInputmon.$error.required" class="alert alert-danger">
+            campo requerido
+        </div>       
 
+<!--
         <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
             <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
             <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
@@ -41,7 +60,7 @@
         <br />
 
         <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
-            <sc-texto ng-model="texto" id="Texto" tipo="texto"></sc-texto>
+            <sc-texto ng-model="texto" id="Texto" tipo="texto" requerido="true"></sc-texto>
             <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
                 Sólo se aceptan letras
             </div>
@@ -49,7 +68,7 @@
 
         <br />
 
-        
+
         <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
             <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
             {{textov}}
@@ -78,7 +97,7 @@
             </div>
         </div>
 
-
+        -->
 
         <button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>
     </form>
@@ -91,18 +110,11 @@
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
 
-    <script src="App/Controllers/controller.js"></script>
-    <script src="App/Directives/scLabel.js"></script>
-    <script src="App/Directives/scInputLabel.js"></script>
-    <script src="App/Directives/scInputLabelNumber.js"></script>
-    <script src="App/Directives/scOnlyLettersDirective.js"></script>
-    <script src="App/Directives/scOnlyLettersIntegersDirective.js"></script>
-    <script src="App/Directives/scOnlyIntegersDirective.js"></script>
-    <script src="App/Directives/scDatePicker.js"></script>
-    <script src="App/Directives/scPhoneMask.js"></script>
-    <script src="App/Directives/scSelectLabel.js"></script>
+    <script src="App/Controllers/controller.js"></script>  
 
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
+    <script src="App/DirectivasSC/scFormatoMoneda.js"></script>
+    <script src="App/DirectivasSC/scMoneda.js"></script>
 </body>
 </html>

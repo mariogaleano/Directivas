@@ -2,24 +2,25 @@
     'use strict';
 
     angular
-        .module('sc.directivas')
-        .directive('scMoneda', scMoneda);
+      .module('sc.directivas')
+      .directive('scMoneda', directivaInputLabelNumber);   
 
-    scMoneda.$inject = ['$window'];
-    
-    function scMoneda ($window) {
-        // Usage:
-        //     <scMoneda></scMoneda>
-        // Creates:
-        // 
+    function directivaInputLabelNumber() {
         var directive = {
+            require: 'ngModel',
             link: link,
-            restrict: 'E'
+            scope: {
+                value: '=ngModel',
+                id: "@",
+                requerido: "="
+            },
+            restrict: 'E',
+            templateUrl: 'app/DirectivasSC/Templates/scMoneda.html'
         };
         return directive;
 
-        function link(scope, element, attrs) {
+        function link(scope, elem, attrs, ctrl) {            
+
         }
     }
-
 })();
