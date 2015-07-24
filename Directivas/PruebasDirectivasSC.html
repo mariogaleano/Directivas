@@ -26,115 +26,72 @@
 
 </head>
 <body ng-controller="mainController as vm" class="container">
-      <form name="myForm" ng-controller="demo as ct">
+      
+    <form name="formulario" novalidate ng-controller="demo as d">
 
-        <sc-radio id="radiom"  opt-value="Nombre"  ng-model="ct.opcionSeleccionada" opciones="ct.opciones" requerido="true"></sc-radio>
+        <div>
+            <a h-ref="" ng-click="d.FillForm()">Llenar Formulario</a>
+        </div>
 
-          <sc-radio id="radiom2" opt-value="Nombre" ng-model="ct.opcionSeleccionada2" opciones="ct.opciones" requerido="true"></sc-radio>
-          
-        <!--<div class="radio" ng-repeat="opcion in ct.opciones" >
-            <label>
-                <input type="radio" name="opcionesw" id="opcionesw" ng-value="{{opcion}}" ng-model="ct.opcionSeleccionada"/>
-                {{opcion.Nombre}}
-            </label>
-        </div>-->
+        <div class="form-group" ng-class="{'has-error':formulario.scInputtodo.$invalid}">
+            <label>Texto abierto</label>
+            <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
+        </div>
 
-        <span>opcion  = {{ct.opcionSeleccionada | json }}</span><br />
+        <div class="form-group" ng-class="{'has-error':formulario.scInputtextonum.$invalid}">
+            <label>Letras y números</label>
+            <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
+        </div>
 
-          <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Aceptar</button>
+        <div class="form-group" ng-class="{'has-error':formulario.scInputletras.$invalid}">
+            <label>Letras</label>
+            <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':formulario.scAreaarea.$invalid}">
+            <label>Text area</label>
+            <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':formulario.scInputmoneda.$invalid}">
+            <label>Moneda</label>
+            <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':formulario.scRadiomoneda.$invalid}">
+            <label>Radio</label>
+            <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
+        </div>
+
+        <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
+        <br />
+        <div class="alert alert-info container-fluid panel-collapse">
+            Texto abierto: {{d.Todo}}<br />
+            Letras y números: {{d.TextoNumero}}<br />
+            Letras: {{d.Texto}}<br />
+            Text area: {{d.TextoArea}}<br />
+            Moneda: {{d.moneda}}<br />
+            Radio: {{d.opcion}}
+        </div>
     </form>
 
+    
 
-    <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola';textonum='hola 123-'">
-
-
-        <!--<h4>texto abierto</h4>
-        <h4>texto abierto requerido</h4>
-
-        <h4>texto letras</h4>
-        <h4>texto letras requerido</h4>
-
-        <h4>texto numero</h4>
-        <h4>texto numero requerido</h4>
-
-        <h4>textarea</h4>
-        <h4>textarea requerido</h4>-->
-
-
-
-        <!--<sc-moneda id="mon" ng-model="valor" requerido="true"></sc-moneda>
-        {{valor}}
-        <div ng-show="formulario.scInputmon.$error.required" class="alert alert-danger">
-            campo requerido
-        </div>-->
-
-        <!--
-                <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
-                    <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
-                    <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
-                        campo requerido
-                    </div>
-                </div>
-
-                <br />
-
-                <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
-                    <sc-texto ng-model="texto" id="Texto" tipo="texto" requerido="true"></sc-texto>
-                    <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
-                        Sólo se aceptan letras
-                    </div>
-                </div>
-
-                <br />
-
-
-                <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
-                    <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
-                    {{textov}}
-                    <div ng-show="formulario.scAreaTexto.$invalid" class="alert alert-danger">
-                        Error 2
-                    </div>
-                </div>
-                <br />
-
-                <div class="control-group" ng-class="{'has-error':formulario.scAreaTextoOpcional.$invalid}">
-                    <h4>Text area opcional</h4>
-                    <sc-texto-area ng-model="TextoOpcional" id="TextoOpcional" requerido="false"></sc-texto-area>
-                    {{TextoOpcional}}
-                    <div ng-show="formulario.scAreaTextoOpcional.$invalid" class="alert alert-danger">
-                        Texto pcional
-                    </div>
-                </div>
-                <br />
-
-                <div class="control-group" ng-class="{'has-error':formulario.msg.$invalid}">
-                    <textarea ng-model="msg" name="msg"
-                              id="msg" requerido="true"></textarea>
-                    {{msg}}
-                    <div ng-show="formulario.msg.$invalid" class="alert alert-danger">
-                        Error 2
-                    </div>
-                </div>
-
-                -->
-
-        <!--<button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>-->
-    </form>
+    
 
   
     <script src="Scripts/mask.js"></script>
-
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
-
     <script src="App/Controllers/controller.js"></script>
-
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
     <script src="App/DirectivasSC/scFormatoMoneda.js"></script>
     <script src="App/DirectivasSC/scMoneda.js"></script>
     <script src="App/DirectivasSC/scRadio.js"></script>
-
+    <script src="App/Directives/scOnlyIntegersDirective.js"></script>
+    <script src="App/Directives/scOnlyLettersDirective.js"></script>
+    <script src="App/Directives/scOnlyLettersIntegersDirective.js"></script>
     <script>
 
         angular
@@ -153,6 +110,15 @@
                 { Id: 2, Nombre: 'Opcion 2',Tipo: "Tipo 2"},
                 { Id: 3, Nombre: 'Opcion 3',Tipo: "Tipo "}
             ];
+
+            ct.FillForm = function () {
+                ct.Todo = "texto abierto";
+                ct.TextoNumero = "abc 134";
+                ct.Texto ="Solamente texto";
+                ct.TextoArea ="Campo para escribir de todo 2343. %";
+                ct.moneda = 456700;
+                ct.opcion = ct.opciones[1];
+            }
         };
 
     </script>
