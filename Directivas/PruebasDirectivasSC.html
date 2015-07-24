@@ -25,11 +25,29 @@
 
 
 </head>
-<body ng-controller="mainController as vm">
+<body ng-controller="mainController as vm" class="container">
+      <form name="myForm" ng-controller="demo as ct">
+
+        <sc-radio id="radiom"  opt-value="Nombre"  ng-model="ct.opcionSeleccionada" opciones="ct.opciones" requerido="true"></sc-radio>
+
+          <sc-radio id="radiom2" opt-value="Nombre" ng-model="ct.opcionSeleccionada2" opciones="ct.opciones" requerido="true"></sc-radio>
+          
+        <!--<div class="radio" ng-repeat="opcion in ct.opciones" >
+            <label>
+                <input type="radio" name="opcionesw" id="opcionesw" ng-value="{{opcion}}" ng-model="ct.opcionSeleccionada"/>
+                {{opcion.Nombre}}
+            </label>
+        </div>-->
+
+        <span>opcion  = {{ct.opcionSeleccionada | json }}</span><br />
+
+          <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Aceptar</button>
+    </form>
+
 
     <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola';textonum='hola 123-'">
 
-       
+
         <!--<h4>texto abierto</h4>
         <h4>texto abierto requerido</h4>
 
@@ -43,78 +61,101 @@
         <h4>textarea requerido</h4>-->
 
 
-        <sc-moneda id="mon" ng-model="valor" requerido="true"></sc-moneda>
+
+        <!--<sc-moneda id="mon" ng-model="valor" requerido="true"></sc-moneda>
         {{valor}}
         <div ng-show="formulario.scInputmon.$error.required" class="alert alert-danger">
             campo requerido
-        </div>       
+        </div>-->
 
-<!--
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
-            <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
-            <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
-                campo requerido
-            </div>
-        </div>
+        <!--
+                <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
+                    <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
+                    <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
+                        campo requerido
+                    </div>
+                </div>
 
-        <br />
+                <br />
 
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
-            <sc-texto ng-model="texto" id="Texto" tipo="texto" requerido="true"></sc-texto>
-            <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
-                Sólo se aceptan letras
-            </div>
-        </div>
+                <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
+                    <sc-texto ng-model="texto" id="Texto" tipo="texto" requerido="true"></sc-texto>
+                    <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
+                        Sólo se aceptan letras
+                    </div>
+                </div>
 
-        <br />
+                <br />
 
 
-        <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
-            <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
-            {{textov}}
-            <div ng-show="formulario.scAreaTexto.$invalid" class="alert alert-danger">
-                Error 2
-            </div>
-        </div>
-        <br />
+                <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
+                    <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
+                    {{textov}}
+                    <div ng-show="formulario.scAreaTexto.$invalid" class="alert alert-danger">
+                        Error 2
+                    </div>
+                </div>
+                <br />
 
-        <div class="control-group" ng-class="{'has-error':formulario.scAreaTextoOpcional.$invalid}">
-            <h4>Text area opcional</h4>
-            <sc-texto-area ng-model="TextoOpcional" id="TextoOpcional" requerido="false"></sc-texto-area>
-            {{TextoOpcional}}
-            <div ng-show="formulario.scAreaTextoOpcional.$invalid" class="alert alert-danger">
-                Texto pcional
-            </div>
-        </div>
-        <br />
+                <div class="control-group" ng-class="{'has-error':formulario.scAreaTextoOpcional.$invalid}">
+                    <h4>Text area opcional</h4>
+                    <sc-texto-area ng-model="TextoOpcional" id="TextoOpcional" requerido="false"></sc-texto-area>
+                    {{TextoOpcional}}
+                    <div ng-show="formulario.scAreaTextoOpcional.$invalid" class="alert alert-danger">
+                        Texto pcional
+                    </div>
+                </div>
+                <br />
 
-        <div class="control-group" ng-class="{'has-error':formulario.msg.$invalid}">
-            <textarea ng-model="msg" name="msg"
-                      id="msg" requerido="true"></textarea>
-            {{msg}}
-            <div ng-show="formulario.msg.$invalid" class="alert alert-danger">
-                Error 2
-            </div>
-        </div>
+                <div class="control-group" ng-class="{'has-error':formulario.msg.$invalid}">
+                    <textarea ng-model="msg" name="msg"
+                              id="msg" requerido="true"></textarea>
+                    {{msg}}
+                    <div ng-show="formulario.msg.$invalid" class="alert alert-danger">
+                        Error 2
+                    </div>
+                </div>
 
-        -->
+                -->
 
-        <button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>
+        <!--<button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>-->
     </form>
 
-    <div ui-view class="container"></div>
-
-
+  
     <script src="Scripts/mask.js"></script>
 
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
 
-    <script src="App/Controllers/controller.js"></script>  
+    <script src="App/Controllers/controller.js"></script>
 
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
     <script src="App/DirectivasSC/scFormatoMoneda.js"></script>
     <script src="App/DirectivasSC/scMoneda.js"></script>
+    <script src="App/DirectivasSC/scRadio.js"></script>
+
+    <script>
+
+        angular
+            .module('sc.directivas').controller('demo', demo);
+
+        demo.$inject = ['$scope'];
+
+        function demo($scope) {
+
+            var ct = this;
+
+            ct.valor = 100;
+
+            ct.opciones = [
+                { Id: 1, Nombre: 'Opcion 1',Tipo: "Tipo 1"},
+                { Id: 2, Nombre: 'Opcion 2',Tipo: "Tipo 2"},
+                { Id: 3, Nombre: 'Opcion 3',Tipo: "Tipo "}
+            ];
+        };
+
+    </script>
+
 </body>
 </html>

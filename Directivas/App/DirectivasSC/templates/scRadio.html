@@ -1,0 +1,6 @@
+﻿ <div class="radio" ng-repeat="opcion in opciones">
+    <label>
+        <input type="radio" ng-value="{{opcion}}" ng-model="$parent.value" ng-attr-name="{{::'scRadio' + id}}" ng-required="{{requerido}}"/>
+        {{opcion[optValue]}}
+    </label>
+</div>

@@ -66,6 +66,7 @@
     <Content Include="App\DirectivasSC\scTexto.js" />
     <Content Include="App\DirectivasSC\scTextoArea.js" />
     <Content Include="App\DirectivasSC\templates\scMoneda.html" />
+    <Content Include="App\DirectivasSC\templates\scRadio.html" />
     <Content Include="App\DirectivasSC\templates\scTextoArea.html" />
     <Content Include="App\DirectivasSC\templates\scTexto.html" />
     <Content Include="App\Directives\scDatePicker.min.js">

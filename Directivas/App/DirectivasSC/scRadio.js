@@ -7,19 +7,22 @@
 
     scRadio.$inject = ['$window'];
     
-    function scRadio ($window) {
-        // Usage:
-        //     <scRadio></scRadio>
-        // Creates:
-        // 
+    function scRadio ($window) {       
         var directive = {
             link: link,
-            restrict: 'E'
+            restrict: 'E',
+            scope: {
+                value: '=ngModel',
+                opciones: '=opciones',
+                id: '@',
+                requerido: "="
+            },
+            templateUrl: 'app/DirectivasSC/Templates/scRadio.html'
         };
         return directive;
 
         function link(scope, element, attrs) {
+            scope.optValue = attrs.optValue;            
         }
     }
-
 })();
