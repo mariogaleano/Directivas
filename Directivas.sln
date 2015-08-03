@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Directivas", "Directivas\Directivas.csproj", "{D3A616D0-516F-4CE6-914F-CB55572B7A14}"
 EndProject
@@ -17,6 +17,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F924B3
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snippets", "Snippets", "{187B9E7F-B353-40D2-B42A-23472C198C70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controles", "Controles", "{A9C936B0-7318-4227-BE27-06683013D5B3}"
+	ProjectSection(SolutionItems) = preProject
+		Snippets\Controles\Textonum.snippet = Snippets\Controles\Textonum.snippet
+		Snippets\Controles\TextoTodo.snippet = Snippets\Controles\TextoTodo.snippet
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Formularios", "Formularios", "{71CC919C-1710-4FDF-AA7C-AB3DD5CAC494}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +40,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9C936B0-7318-4227-BE27-06683013D5B3} = {187B9E7F-B353-40D2-B42A-23472C198C70}
+		{71CC919C-1710-4FDF-AA7C-AB3DD5CAC494} = {187B9E7F-B353-40D2-B42A-23472C198C70}
 	EndGlobalSection
 EndGlobal
