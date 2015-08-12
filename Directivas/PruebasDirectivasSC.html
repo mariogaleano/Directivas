@@ -26,47 +26,51 @@
 
 </head>
 <body ng-controller="mainController as vm" class="container">
-      
+
     <form name="formulario" novalidate ng-controller="demo as d">
 
         <div>
             <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
         </div>
-
-        <div class="form-group" ng-class="{'has-error':formulario.scInputtodo.$invalid}">
+        <sc-panel control="formulario.scInputletrasConte">
+            <label>Solo Letas en Contenedor</label>
+            <sc-texto id="letrasConte" ng-model="d.LetrasContenedor" requerido="true" tipo="texto"></sc-texto>
+        </sc-panel>
+        <sc-panel control="formulario.scInputtodo">
             <label>Texto abierto</label>
             <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
-        </div>
-
-        <div class="form-group" ng-class="{'has-error':formulario.scInputtextonum.$invalid}">
+        </sc-panel>
+        <sc-panel control="formulario.scInputtextonum">
             <label>Letras y números</label>
             <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
-        </div>
+        </sc-panel>
 
-        <div class="form-group" ng-class="{'has-error':formulario.scInputletras.$invalid}">
+        <sc-panel control="formulario.scInputletras">
             <label>Letras</label>
             <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
-        </div>
+        </sc-panel>
 
-        <div class="form-group" ng-class="{'has-error':formulario.scAreaarea.$invalid}">
+        <sc-panel control="formulario.scAreaarea">
             <label>Text area</label>
             <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
-        </div>
+            <span></span>
+        </sc-panel>
 
-        <div class="form-group" ng-class="{'has-error':formulario.scInputmoneda.$invalid}">
+        <sc-panel control="formulario.scInputmoneda">
             <label>Moneda</label>
             <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
-        </div>
+        </sc-panel>
 
-        <div class="form-group" ng-class="{'has-error':formulario.scRadiomoneda.$invalid}">
+        <sc-panel control="formulario.scRadiomoneda">
             <label>Radio</label>
             <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
-        </div>
+        </sc-panel>
 
         <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
         <br />
         <div class="alert alert-info container-fluid panel-collapse">
             Texto abierto: {{d.Todo}}<br />
+            Letras en Contenedor: {{d.LetrasContenedor}}<br />
             Letras y números: {{d.TextoNumero}}<br />
             Letras: {{d.Texto}}<br />
             Text area: {{d.TextoArea}}<br />
@@ -75,15 +79,16 @@
         </div>
     </form>
 
-    
 
-    
 
-  
+
+
+
     <script src="Scripts/mask.js"></script>
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
     <script src="App/Controllers/controller.js"></script>
+    <script src="App/DirectivasSC/Contenedores/scPanel.js"></script>
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
     <script src="App/DirectivasSC/scFormatoMoneda.js"></script>
@@ -106,16 +111,16 @@
             ct.valor = 100;
 
             ct.opciones = [
-                { Id: 1, Nombre: 'Opcion 1',Tipo: "Tipo 1"},
-                { Id: 2, Nombre: 'Opcion 2',Tipo: "Tipo 2"},
-                { Id: 3, Nombre: 'Opcion 3',Tipo: "Tipo "}
+                { Id: 1, Nombre: 'Opcion 1', Tipo: "Tipo 1" },
+                { Id: 2, Nombre: 'Opcion 2', Tipo: "Tipo 2" },
+                { Id: 3, Nombre: 'Opcion 3', Tipo: "Tipo " }
             ];
 
             ct.FillForm = function () {
                 ct.Todo = "texto abierto";
                 ct.TextoNumero = "abc 134";
-                ct.Texto ="Solamente texto";
-                ct.TextoArea ="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.";
+                ct.Texto = "Solamente texto";
+                ct.TextoArea = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.";
                 ct.moneda = 456700;
                 ct.opcion = ct.opciones[1];
             }

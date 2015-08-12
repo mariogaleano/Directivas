@@ -1,12 +1,8 @@
 ﻿(function () {
     'use strict';
-
-    angular
-        .module('sc.directivas')
-        .directive('scTexto', scTexto);
+    angular.module('sc.directivas').directive('scTexto', scTexto);
 
     scTexto.$inject = ['$window', '$compile', 'tipoInput'];
-
     function scTexto($window, $compile, tipoInput) {
         var directive = {
             require: ['ngModel'],
@@ -25,7 +21,7 @@
         function link(scope, elm, attrs) {
 
             var input = elm.find(":input");
-           
+
             switch (attrs.tipo) {
                 case tipoInput.todo:
                     break;
