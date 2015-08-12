@@ -116,6 +116,6 @@
         }]);
     }]);
 
-    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo' });
+    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num' });
 
 })();

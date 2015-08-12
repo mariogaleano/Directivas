@@ -56,10 +56,7 @@
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
-    <Content Include="App\DirectivasSC\scOnlyLettersDirective.js" />
-    <Content Include="App\DirectivasSC\scOnlyLettersDirective.min.js">
-      <DependentUpon>scOnlyLettersDirective.js</DependentUpon>
-    </Content>
+    <Content Include="App\DirectivasSC\Validadores\scSoloLetras.js" />
     <Content Include="App\DirectivasSC\scRadio.js" />
     <Content Include="App\DirectivasSC\scTelefono.js" />
     <Content Include="App\DirectivasSC\scTextoHtml.js" />
@@ -81,15 +78,6 @@
     </Content>
     <Content Include="App\Directives\scLabel.min.js">
       <DependentUpon>scLabel.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\scOnlyIntegersDirective.min.js">
-      <DependentUpon>scOnlyIntegersDirective.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\scOnlyLettersDirective.min.js">
-      <DependentUpon>scOnlyLettersDirective.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\scOnlyLettersIntegersDirective.min.js">
-      <DependentUpon>scOnlyLettersIntegersDirective.js</DependentUpon>
     </Content>
     <Content Include="App\Directives\scPhoneMask.min.js">
       <DependentUpon>scPhoneMask.js</DependentUpon>
@@ -129,15 +117,6 @@
     <Content Include="App\Directives\scLabel.min.js.map">
       <DependentUpon>scLabel.min.js</DependentUpon>
     </Content>
-    <Content Include="App\Directives\scOnlyIntegersDirective.min.js.map">
-      <DependentUpon>scOnlyIntegersDirective.min.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\scOnlyLettersDirective.min.js.map">
-      <DependentUpon>scOnlyLettersDirective.min.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\scOnlyLettersIntegersDirective.min.js.map">
-      <DependentUpon>scOnlyLettersIntegersDirective.min.js</DependentUpon>
-    </Content>
     <Content Include="App\Directives\scPhoneMask.min.js.map">
       <DependentUpon>scPhoneMask.min.js</DependentUpon>
     </Content>
@@ -152,9 +131,6 @@
     </Content>
     <Content Include="App\Modules\app - release.min.js.map">
       <DependentUpon>app - release.min.js</DependentUpon>
-    </Content>
-    <Content Include="App\DirectivasSC\scOnlyLettersDirective.min.js.map">
-      <DependentUpon>scOnlyLettersDirective.min.js</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -181,9 +157,8 @@
     <Content Include="App\Directives\scInputLabelNumber.js" />
     <Content Include="App\Directives\scInputLabel.js" />
     <Content Include="App\Directives\scLabel.js" />
-    <Content Include="App\Directives\scOnlyLettersDirective.js" />
-    <Content Include="App\Directives\scOnlyIntegersDirective.js" />
-    <Content Include="App\Directives\scOnlyLettersIntegersDirective.js" />
+    <Content Include="App\DirectivasSC\Validadores\scSoloEnteros.js" />
+    <Content Include="App\DirectivasSC\Validadores\scSoloLetrasEnteros.js" />
     <Content Include="App\Directives\templates\DirectivaInputLabelTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaInputLabelNumberTemplate.html" />
     <Content Include="App\Directives\templates\DirectivaLabelTemplate.html" />

@@ -1,2 +1,4 @@
-﻿<div class="form-group" ng-class="{'has-error':control.$invalid}" ng-transclude>
+﻿<div class="form-group" ng-class="{'has-error':control.$invalid}" >
+    <div ng-transclude></div>
+    <span class="fa fa-exclamation-circle pull-right" ng-show="control.$invalid"></span>
 </div>

@@ -28,54 +28,57 @@
 <body ng-controller="mainController as vm" class="container">
 
     <form name="formulario" novalidate ng-controller="demo as d">
+        <div class="row">
+            <div>
+                <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
+            </div>
+            <sc-panel control="formulario.scInputNumeros">
+                <label>Solo Numeros</label>
+                <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num"></sc-texto>
+            </sc-panel>
+            <sc-panel control="formulario.scInputtodo">
+                <label>Texto abierto</label>
+                <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
+            </sc-panel>
+            <sc-panel control="formulario.scInputtextonum">
+                <label>Letras y números</label>
+                <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
+            </sc-panel>
 
-        <div>
-            <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
+            <sc-panel control="formulario.scInputletras">
+                <label>Letras</label>
+                <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
+            </sc-panel>
+
+            <sc-panel control="formulario.scAreaarea">
+                <label>Text area</label>
+                <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
+                <span></span>
+            </sc-panel>
+
+            <sc-panel control="formulario.scInputmoneda">
+                <label>Moneda</label>
+                <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
+            </sc-panel>
+
+            <sc-panel control="formulario.scRadiomoneda">
+                <label>Radio</label>
+                <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
+            </sc-panel>
         </div>
-        <sc-panel control="formulario.scInputletrasConte">
-            <label>Solo Letas en Contenedor</label>
-            <sc-texto id="letrasConte" ng-model="d.LetrasContenedor" requerido="true" tipo="texto"></sc-texto>
-        </sc-panel>
-        <sc-panel control="formulario.scInputtodo">
-            <label>Texto abierto</label>
-            <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
-        </sc-panel>
-        <sc-panel control="formulario.scInputtextonum">
-            <label>Letras y números</label>
-            <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
-        </sc-panel>
+        <div class="row">
+            <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
+            <br />
+            <div class="alert alert-info container-fluid panel-collapse">
+                Texto abierto: {{d.Todo}}<br />
+                Numeros: {{d.Numeros}}<br />
+                Letras y números: {{d.TextoNumero}}<br />
+                Letras: {{d.Texto}}<br />
+                Text area: {{d.TextoArea}}<br />
+                Moneda: {{d.moneda}}<br />
+                Radio: {{d.opcion}}
+            </div>
 
-        <sc-panel control="formulario.scInputletras">
-            <label>Letras</label>
-            <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
-        </sc-panel>
-
-        <sc-panel control="formulario.scAreaarea">
-            <label>Text area</label>
-            <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
-            <span></span>
-        </sc-panel>
-
-        <sc-panel control="formulario.scInputmoneda">
-            <label>Moneda</label>
-            <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
-        </sc-panel>
-
-        <sc-panel control="formulario.scRadiomoneda">
-            <label>Radio</label>
-            <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
-        </sc-panel>
-
-        <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
-        <br />
-        <div class="alert alert-info container-fluid panel-collapse">
-            Texto abierto: {{d.Todo}}<br />
-            Letras en Contenedor: {{d.LetrasContenedor}}<br />
-            Letras y números: {{d.TextoNumero}}<br />
-            Letras: {{d.Texto}}<br />
-            Text area: {{d.TextoArea}}<br />
-            Moneda: {{d.moneda}}<br />
-            Radio: {{d.opcion}}
         </div>
     </form>
 
@@ -94,9 +97,9 @@
     <script src="App/DirectivasSC/scFormatoMoneda.js"></script>
     <script src="App/DirectivasSC/scMoneda.js"></script>
     <script src="App/DirectivasSC/scRadio.js"></script>
-    <script src="App/Directives/scOnlyIntegersDirective.js"></script>
-    <script src="App/Directives/scOnlyLettersDirective.js"></script>
-    <script src="App/Directives/scOnlyLettersIntegersDirective.js"></script>
+    <script src="App/DirectivasSC/Validadores/scSoloLetras.js"></script>
+    <script src="App/DirectivasSC/Validadores/scSoloEnteros.js"></script>
+    <script src="App/DirectivasSC/Validadores/scSoloLetrasEnteros.js"></script>
     <script>
 
         angular
