@@ -12,23 +12,10 @@
         };
         return directiva;
 
-        function link(scope, elm, attrs, ctrl) {
-            scope.$watch(attrs.ngModel, function (valor) {
-
-                if (ctrl.$isEmpty(valor)) {
-                    ctrl.$setValidity('soloLetrasEnteros', true);
-                    return true;
-                }
-                var resultado = VALID_REGEX.test(valor);
-
-                if (resultado) {
-                    ctrl.$setValidity('soloLetrasEnteros', true);
-                    return true;
-                } else {
-                    ctrl.$setValidity('soloLetrasEnteros', false);
-                    return true;
-                }
-            });
+        function link(scope, elm, attrs, ngModel) {
+            ngModel.$validators.soloLetrasEnteros = function (valor) {
+                return VALID_REGEX.test(valor);
+            }
         };
     }
 })();

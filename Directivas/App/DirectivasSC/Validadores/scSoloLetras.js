@@ -2,6 +2,8 @@
     'use strict';
     angular.module('sc.directivas').directive('soloLetras', scSoloLetras);
 
+    var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ_ ]*$/;
+
     function scSoloLetras() {
         var directiva = {
             require: 'ngModel',
@@ -10,25 +12,10 @@
         };
         return directiva;
 
-        function link(scope, elm, attrs, ctrl) {
-
-            scope.$watch(attrs.ngModel, function (valor) {
-
-                if (ctrl.$isEmpty(valor)) {
-                    ctrl.$setValidity('soloLetras', true);
-                    return true;
-                }
-                var TEXT_REGEX = /^[a-zA-ZÑñáéíóúÁÉÍÓÚ_ ]*$/;
-                var resultado = TEXT_REGEX.test(valor);
-
-                if (resultado) {
-                    ctrl.$setValidity('soloLetras', true);
-                    return true;
-                } else {
-                    ctrl.$setValidity('soloLetras', false);
-                    return true;
-                }
-            });
+        function link(scope, elm, attrs, ngModel) {
+            ngModel.$validators.soloLetras = function (valor) {
+                return TEXT_REGEX.test(valor);
+            }
         };
     }
 })();

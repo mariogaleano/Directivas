@@ -1,0 +1,11 @@
+﻿
+/* Specify styling for tooltip contents */
+.tooltip.errornegocio .tooltip-inner {
+    color: #ffffff;
+    background-color: #ff6a00;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+/* Hide arrow */
+.tooltip.errornegocio .tooltip-arrow {
+    display: none;
+}

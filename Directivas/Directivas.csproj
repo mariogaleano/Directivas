@@ -56,6 +56,7 @@
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
+    <Content Include="App\DirectivasSC\Validadores\scServerEval.js" />
     <Content Include="App\DirectivasSC\Validadores\scSoloLetras.js" />
     <Content Include="App\DirectivasSC\scRadio.js" />
     <Content Include="App\DirectivasSC\scTelefono.js" />
@@ -78,6 +79,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mainDirectivas.css" />
     <Content Include="Content\textAngular.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -132,6 +134,10 @@
     <Content Include="Scripts\textAngular-sanitize.min.js" />
     <Content Include="Scripts\textAngular.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Scripts\validate\validate.js" />
+    <Content Include="Scripts\validate\validate.min.js">
+      <DependentUpon>validate.js</DependentUpon>
+    </Content>
     <Content Include="TS Files\TSDemo.html" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">

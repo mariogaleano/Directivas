@@ -1,6 +1,7 @@
 ﻿(function () {
     'use strict';
     angular.module('sc.directivas').directive('soloEnteros', scSoloEnteros);
+    var NUMBERS_REGEX = /^[0-9]*$/;
 
     function scSoloEnteros() {
         var directiva = {
@@ -10,26 +11,10 @@
         };
         return directiva;
 
-        function link(scope, elm, attrs, ctrl) {
-            scope.$watch(attrs.ngModel, function (valor) {
-
-                if (ctrl.$isEmpty(valor)) {
-                    ctrl.$setValidity('soloEnteros', true);                    
-                    return true;
-                }
-                var NUMBERS_REGEX = /^[0-9]*$/;
-                var resultado = NUMBERS_REGEX.test(valor);
-
-                if (resultado) {
-                    ctrl.$setValidity('soloEnteros', true);
-                    //scope.MostrarError = false;
-                    return true;
-                } else {
-                    ctrl.$setValidity('soloEnteros', false);
-                    //scope.MostrarError = true;
-                    return true;
-                }
-            });
+        function link(scope, elm, attrs, ngModel) {
+            ngModel.$validators.soloEnteros = function (valor) {
+                return NUMBERS_REGEX.test(valor);
+            }
         };
     }
 })();

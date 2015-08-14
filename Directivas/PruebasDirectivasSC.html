@@ -6,6 +6,7 @@
     <script src="Scripts/jquery-2.1.4.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/mainDirectivas.css" rel="stylesheet" />
 
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
@@ -20,7 +21,7 @@
     <script src='Scripts/textAngular-rangy.min.js'></script>
     <script src='Scripts/textAngular-sanitize.min.js'></script>
     <script src='Scripts/textAngular.min.js'></script>
-
+    <script src="Scripts/validate/validate.js"></script>
 
 
 
@@ -28,61 +29,65 @@
 <body ng-controller="mainController as vm" class="container">
 
     <h1>Test desde github</h1>
+    <div ng-controller="demo as d">
+        <form name="formulario" novalidate>
+            <div class="row">
+                <div>
+                    <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
+                </div>
+                <sc-panel control="formulario.scInputNumeros">
+                    <label>Solo Numeros</label>
+                    <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num" ></sc-texto>
+                </sc-panel>
+                <sc-panel control="formulario.scInputtodo">
+                    <label>Texto abierto</label>
+                    <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
+                </sc-panel>
+                <sc-panel control="formulario.scInputtextonum">
+                    <label>Letras y números</label>
+                    <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
+                </sc-panel>
 
-    <form name="formulario" novalidate ng-controller="demo as d">
-        <div class="row">
-            <div>
-                <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
+                <sc-panel control="formulario.scInputletras">
+                    <label>Letras</label>
+                    <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
+                </sc-panel>
+
+                <sc-panel control="formulario.scAreaarea">
+                    <label>Text area</label>
+                    <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
+                    <span></span>
+                </sc-panel>
+
+                <sc-panel control="formulario.scInputmoneda">
+                    <label>Moneda</label>
+                    <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
+                </sc-panel>
+
+                <sc-panel control="formulario.scRadiomoneda">
+                    <label>Radio</label>
+                    <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
+                </sc-panel>
             </div>
-            <sc-panel control="formulario.scInputNumeros">
-                <label>Solo Numeros</label>
-                <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num"></sc-texto>
-            </sc-panel>
-            <sc-panel control="formulario.scInputtodo">
-                <label>Texto abierto</label>
-                <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
-            </sc-panel>
-            <sc-panel control="formulario.scInputtextonum">
-                <label>Letras y números</label>
-                <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
-            </sc-panel>
+            <div class="row">
+                <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
+                <br />
+                <div class="alert alert-info container-fluid panel-collapse">
+                    Texto abierto: {{d.Todo}}<br />
+                    Numeros: {{d.Numeros}}<br />
+                    Letras y números: {{d.TextoNumero}}<br />
+                    Letras: {{d.Texto}}<br />
+                    Text area: {{d.TextoArea}}<br />
+                    Moneda: {{d.moneda}}<br />
+                    Radio: {{d.opcion}}
+                </div>
 
-            <sc-panel control="formulario.scInputletras">
-                <label>Letras</label>
-                <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
-            </sc-panel>
-
-            <sc-panel control="formulario.scAreaarea">
-                <label>Text area</label>
-                <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
-                <span></span>
-            </sc-panel>
-
-            <sc-panel control="formulario.scInputmoneda">
-                <label>Moneda</label>
-                <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
-            </sc-panel>
-
-            <sc-panel control="formulario.scRadiomoneda">
-                <label>Radio</label>
-                <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
-            </sc-panel>
-        </div>
-        <div class="row">
-            <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
-            <br />
-            <div class="alert alert-info container-fluid panel-collapse">
-                Texto abierto: {{d.Todo}}<br />
-                Numeros: {{d.Numeros}}<br />
-                Letras y números: {{d.TextoNumero}}<br />
-                Letras: {{d.Texto}}<br />
-                Text area: {{d.TextoArea}}<br />
-                Moneda: {{d.moneda}}<br />
-                Radio: {{d.opcion}}
             </div>
-
-        </div>
-    </form>
+        </form>
+        <pre>
+            {{ formulario | json }}
+        </pre>
+    </div>
 
 
     <script src="Scripts/mask.js"></script>
@@ -128,6 +133,7 @@
         };
 
     </script>
+
 
 </body>
 </html>

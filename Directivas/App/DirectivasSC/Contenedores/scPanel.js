@@ -10,7 +10,7 @@
         // Creates:
         // 
         var directive = {
-            controller: Ctrl,
+            controller: panelCtrl,
             link: link,
             restrict: 'E',
             transclude: true,
@@ -21,14 +21,18 @@
         };
         return directive;
 
-        function Ctrl($scope) {
+        function panelCtrl($scope) {
             ///este valor cambiara segun el tipo de error
             $scope.tooltip = "Valor Errado";
-            $scope.tooltipclass = "";
+            $scope.tooltipclass = "errornegocio";
+            $scope.cancel = function (e) {
+                if (e.keyCode == 27) {
+                    $scope.control.$rollbackViewValue();
+                }
+            };          
         }
 
         function link($scope, elm, attrs) {
-           
         }
     }
 

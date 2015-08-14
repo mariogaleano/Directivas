@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap', 'ui.mask', 'textAngular']);
+    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap', 'ui.mask', 'textAngular', 'ui.validate']);
 
     angular.module('sc.directivas').config(function ($stateProvider, $urlRouterProvider) {
 

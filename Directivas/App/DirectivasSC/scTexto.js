@@ -5,21 +5,26 @@
     scTexto.$inject = ['$window', '$compile', 'tipoInput'];
     function scTexto($window, $compile, tipoInput) {
         var directive = {
-            require: ['ngModel'],
+            require: ['^ngModel'],
+            controller: Ctrl,
             link: link,
             restrict: 'E',
             scope: {
                 value: '=ngModel',
                 tipo: '@',//[texto,textonum,todo]
                 id: "@",
-                requerido: "="
+                requerido: "=",
+                cancel: '&'
             },
             templateUrl: 'app/DirectivasSC/Templates/scTexto.html'
         };
         return directive;
 
+        function Ctrl($scope) {
+           
+        }
         function link(scope, elm, attrs, ngModel) {
-
+          
             var input = elm.find(":input");
 
             switch (attrs.tipo) {
