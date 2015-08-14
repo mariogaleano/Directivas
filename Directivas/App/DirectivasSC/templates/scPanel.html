@@ -1,4 +1,5 @@
-﻿<div class="form-group" ng-class="{'has-error':control.$invalid}" >
+﻿<div class="form-group" ng-class="{'has-error':control.$invalid}">
     <div ng-transclude></div>
-    <span class="fa fa-exclamation-circle pull-right" ng-show="control.$invalid"></span>
+    <span class="fa fa-exclamation-circle pull-right" ng-show="control.$invalid"
+          tooltip="{{tooltip}}" tooltip-placement="top" tooltip-trigger="click" tooltip-class="{{tooltipclass}}"></span>
 </div>

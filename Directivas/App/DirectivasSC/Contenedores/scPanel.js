@@ -22,7 +22,9 @@
         return directive;
 
         function Ctrl($scope) {
-
+            ///este valor cambiara segun el tipo de error
+            $scope.tooltip = "Valor Errado";
+            $scope.tooltipclass = "";
         }
 
         function link($scope, elm, attrs) {
