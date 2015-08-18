@@ -12,6 +12,8 @@
         var directive = {
             controller: panelCtrl,
             link: link,
+            controllerAs: 'vm',
+            bindToController: true,
             restrict: 'E',
             transclude: true,
             scope: {
@@ -23,13 +25,8 @@
 
         function panelCtrl($scope) {
             ///este valor cambiara segun el tipo de error
-            $scope.tooltip = "Valor Errado";
-            $scope.tooltipclass = "errornegocio";
-            $scope.cancel = function (e) {
-                if (e.keyCode == 27) {
-                    $scope.control.$rollbackViewValue();
-                }
-            };          
+            this.tooltip = "Valor Errado";
+            this.tooltipclass = "errornegocio";                   
         }
 
         function link($scope, elm, attrs) {
