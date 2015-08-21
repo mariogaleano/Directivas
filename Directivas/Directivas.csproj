@@ -56,6 +56,9 @@
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
+    <Content Include="App\DirectivasSC\templates\scPanelcompleto.html" />
+    <Content Include="App\DirectivasSC\templates\scPanelcuarto.html" />
+    <Content Include="App\DirectivasSC\templates\scPanelmedio.html" />
     <Content Include="App\DirectivasSC\Validadores\scServerEval.js" />
     <Content Include="App\DirectivasSC\Validadores\scSoloLetras.js" />
     <Content Include="App\DirectivasSC\scRadio.js" />
@@ -75,14 +78,23 @@
     <Content Include="App\Modules\app.min.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
+    <Content Include="App\Modules\appmaquetacion.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\mainDirectivas.css" />
     <Content Include="Content\textAngular.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\icomoon\demo-files\demo.css" />
+    <Content Include="fonts\icomoon\demo-files\demo.js" />
+    <Content Include="fonts\icomoon\demo.html" />
+    <Content Include="fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="fonts\icomoon\Read Me.txt" />
+    <Content Include="fonts\icomoon\style.css" />
+    <Content Include="InicioMaquetacion.html" />
     <Content Include="Pages\PruebaDirectivaInputLabelNumber.html" />
     <Content Include="Pages\PruebaDirectivaPhone.html" />
     <Content Include="Pages\PruebaDirectivaSelectLabel.html" />
@@ -107,12 +119,17 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="fonts\icomoon\selection.json" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="PruebasDirectivasSC.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\mask.js" />
     <Content Include="App\DirectivasSC\Validadores\scSoloEnteros.js" />
     <Content Include="App\DirectivasSC\Validadores\scSoloLetrasEnteros.js" />
@@ -130,6 +147,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\textAngular-rangy.min.js" />
     <Content Include="Scripts\textAngular-sanitize.min.js" />
     <Content Include="Scripts\textAngular.min.js" />

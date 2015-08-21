@@ -1,11 +1,16 @@
 ﻿<!DOCTYPE html>
 <html ng-app="sc.directivas">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
-    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="Scripts/jquery-2.1.4.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/main.css" rel="stylesheet" />
     <link href="Content/mainDirectivas.css" rel="stylesheet" />
 
     <script src="Scripts/bootstrap.min.js"></script>
@@ -23,7 +28,7 @@
     <script src='Scripts/textAngular.min.js'></script>
     <script src="Scripts/validate/validate.js"></script>
 
-
+    <script src="Scripts/modernizr-2.8.3.js"></script>
 
 </head>
 <body ng-controller="mainController as vm" class="container">
@@ -35,36 +40,36 @@
                 <div>
                     <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
                 </div>
-                <sc-panel control="formulario.scInputNumeros">
+                <sc-panel control="formulario.scInputNumeros" tamano="medio">
                     <label>Solo Numeros</label>
-                    <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num" ></sc-texto>
+                    <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num"></sc-texto>
                 </sc-panel>
-                <sc-panel control="formulario.scInputtodo">
+                <sc-panel control="formulario.scInputtodo" tamano="medio">
                     <label>Texto abierto</label>
                     <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
                 </sc-panel>
-                <sc-panel control="formulario.scInputtextonum">
+                <sc-panel control="formulario.scInputtextonum" tamano="medio">
                     <label>Letras y números</label>
                     <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
                 </sc-panel>
 
-                <sc-panel control="formulario.scInputletras">
+                <sc-panel control="formulario.scInputletras" tamano="completo">
                     <label>Letras</label>
                     <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
                 </sc-panel>
 
-                <sc-panel control="formulario.scAreaarea">
+                <sc-panel control="formulario.scAreaarea" tamano="completo">
                     <label>Text area</label>
                     <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
                     <span></span>
                 </sc-panel>
 
-                <sc-panel control="formulario.scInputmoneda">
+                <sc-panel control="formulario.scInputmoneda" tamano="carto" tieneicono="true">
                     <label>Moneda</label>
                     <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
                 </sc-panel>
 
-                <sc-panel control="formulario.scRadiomoneda">
+                <sc-panel control="formulario.scRadiomoneda" tamano="medio" class="clearfix">
                     <label>Radio</label>
                     <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
                 </sc-panel>

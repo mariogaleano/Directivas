@@ -1,0 +1,91 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?mmlfui');
+	src:url('fonts/icomoon.eot?#iefixmmlfui') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?mmlfui') format('truetype'),
+		url('fonts/icomoon.woff?mmlfui') format('woff'),
+		url('fonts/icomoon.svg?mmlfui#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-credi-01:before {
+	content: "\e600";
+}
+.icon-credi-02:before {
+	content: "\e601";
+}
+.icon-credi-03:before {
+	content: "\e602";
+}
+.icon-credi-04:before {
+	content: "\e603";
+}
+.icon-credi-05:before {
+	content: "\e604";
+}
+.icon-credi-06:before {
+	content: "\e605";
+}
+.icon-credi-07:before {
+	content: "\e606";
+}
+.icon-credi-08:before {
+	content: "\e607";
+}
+.icon-credi-09:before {
+	content: "\e608";
+}
+.icon-credi-10:before {
+	content: "\e609";
+}
+.icon-credi-11:before {
+	content: "\e60a";
+}
+.icon-credi-12:before {
+	content: "\e60b";
+}
+.icon-credi-13:before {
+	content: "\e60c";
+}
+.icon-credi-14:before {
+	content: "\e60d";
+}
+.icon-credi-15:before {
+	content: "\e60e";
+}
+.icon-credi-16:before {
+	content: "\e60f";
+}
+.icon-credi-17:before {
+	content: "\e610";
+}
+.icon-credi-18:before {
+	content: "\e611";
+}
+.icon-credi-19:before {
+	content: "\e612";
+}
+.icon-credi-20:before {
+	content: "\e613";
+}
+.icon-credi-21:before {
+	content: "\e614";
+}
+.icon-credi-22:before {
+	content: "\e615";
+}

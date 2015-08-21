@@ -22,10 +22,10 @@
         return directive;
 
         function Ctrl($scope) {
-            console.log("value=" + this.value);
-            console.log("tipo=" + this.tipo);
-            console.log("id=" + this.id);
-            console.log("req=" + this.requerido);
+            //console.log("value=" + this.value);
+            //console.log("tipo=" + this.tipo);
+            //console.log("id=" + this.id);
+            //console.log("req=" + this.requerido);
             this.cancel = function (e) {
                 if (e.keyCode == 27) {
                     console.log("control=" + JSON.stringify($scope.control));

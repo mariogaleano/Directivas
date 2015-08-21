@@ -12,24 +12,35 @@
         var directive = {
             controller: panelCtrl,
             link: link,
+            restrict: 'E',
             controllerAs: 'vm',
             bindToController: true,
-            restrict: 'E',
             transclude: true,
             scope: {
-                control: '='
+                control: '=',
+                tamano: '=',
+                tieneicono: '='
             },
-            templateUrl: 'app/DirectivasSC/Templates/scPanel.html'
+            templateUrl: function (elem, attrs) {
+                var size = attrs.tamano || '';
+                return 'app/DirectivasSC/Templates/scPanel' + size + '.html';;
+            }
         };
         return directive;
 
         function panelCtrl($scope) {
+            var vm = this;
             ///este valor cambiara segun el tipo de error
-            this.tooltip = "Valor Errado";
-            this.tooltipclass = "errornegocio";                   
+            vm.tooltip = "Valor Errado";
+            vm.tooltipclass = "errornegocio";
         }
 
-        function link($scope, elm, attrs) {
+        function link(scope, elm, attrs) {
+            scope.$watch('tieneicono', function (newValue) {
+                if (scope.tieneicono === true) {
+                    elm.addClass('f-controlIconRight');
+                }
+            });
         }
     }
 
