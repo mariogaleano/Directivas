@@ -30,9 +30,7 @@
 
         function panelCtrl($scope) {
             var vm = this;
-            ///este valor cambiara segun el tipo de error
-            vm.tooltip = "Valor Errado";
-            vm.tooltipclass = "errornegocio";
+          
         }
 
         function link(scope, elm, attrs) {

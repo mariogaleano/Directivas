@@ -19,9 +19,12 @@
             },
             templateUrl: 'app/DirectivasSC/Templates/scTexto.html'
         };
+        Ctrl.$inject = ['$scope'];
         return directive;
 
+
         function Ctrl($scope) {
+            var vm = this;
             //console.log("value=" + this.value);
             //console.log("tipo=" + this.tipo);
             //console.log("id=" + this.id);
@@ -33,13 +36,16 @@
                     $scope.control.$rollbackViewValue();
                 }
             };
+            ///este valor cambiara segun el tipo de error
+            vm.tooltip = "Valor Errado";
+            vm.tooltipclass = "errornegocio";
 
         }
         function link(scope, elm, attrs, controllers) {
             var ngModel = controllers[0];
             var ctrlpanel = controllers[1];
             scope.$watch(ctrlpanel.control, function () {
-                scope.control = ctrlpanel.control;
+                scope.control = ctrlpanel.control;                
             });
             var input = elm.find(":input");
 

@@ -1,1 +1,6 @@
-﻿<input type="text" class="f-input clearfix" format="number" ng-attr-name="{{::'scInput' + id}}" ng-attr-id="{{::'scInput' + id}}" ng-model="value" maxlength="15" ng-required="{{requerido}}"/>
+﻿<div class="f-input clearfix">
+    <input type="text" format="number"  ng-attr-name="{{::'scInput' + vm.id}}" ng-attr-id="{{::'scInput' + vm.id}}" ng-model="value" maxlength="15" ng-required="{{requerido}}" />
+    <a style="cursor: pointer" ng-show="control.$invalid" popover="{{vm.tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{vm.tooltipclass}}">
+        <i class="icon-credi-01"></i>
+    </a>
+</div>

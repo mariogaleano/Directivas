@@ -18,6 +18,7 @@
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -31,49 +32,47 @@
     <script src="Scripts/modernizr-2.8.3.js"></script>
 
 </head>
-<body ng-controller="mainController as vm" class="container">
+<body ng-controller="mainController as vm">
 
     <h1>Test desde github</h1>
-    <div ng-controller="demo as d">
-        <form name="formulario" novalidate>
-            <div class="row">
-                <div>
-                    <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
-                </div>
-                <sc-panel control="formulario.scInputNumeros" tamano="medio">
-                    <label>Solo Numeros</label>
-                    <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num"></sc-texto>
-                </sc-panel>
-                <sc-panel control="formulario.scInputtodo" tamano="medio">
-                    <label>Texto abierto</label>
-                    <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
-                </sc-panel>
-                <sc-panel control="formulario.scInputtextonum" tamano="medio">
-                    <label>Letras y números</label>
-                    <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
-                </sc-panel>
-
-                <sc-panel control="formulario.scInputletras" tamano="completo">
-                    <label>Letras</label>
-                    <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
-                </sc-panel>
-
-                <sc-panel control="formulario.scAreaarea" tamano="completo">
-                    <label>Text area</label>
-                    <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
-                    <span></span>
-                </sc-panel>
-
-                <sc-panel control="formulario.scInputmoneda" tamano="carto" tieneicono="true">
-                    <label>Moneda</label>
-                    <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
-                </sc-panel>
-
-                <sc-panel control="formulario.scRadiomoneda" tamano="medio" class="clearfix">
-                    <label>Radio</label>
-                    <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
-                </sc-panel>
+    <div ng-controller="demo as d" class="container">
+        <form name="formulario" novalidate class="clearfix">
+            <div>
+                <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
             </div>
+            <sc-panel control="formulario.scInputNumeros" tamano="medio">
+                <label>Solo Numeros <span class="txtRojo">*</span></label>
+                <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num"></sc-texto>
+            </sc-panel>
+            <sc-panel control="formulario.scInputtodo" tamano="medio">
+                <label>Texto abierto<span class="txtRojo">*</span></label>
+                <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo"></sc-texto>
+            </sc-panel>
+            <sc-panel control="formulario.scInputtextonum" tamano="completo">
+                <label>Letras y números<span class="txtRojo">*</span></label>
+                <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum"></sc-texto>
+            </sc-panel>
+
+            <sc-panel control="formulario.scInputletras" tamano="completo">
+                <label>Letras<span class="txtRojo">*</span></label>
+                <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto"></sc-texto>
+            </sc-panel>
+
+            <sc-panel control="formulario.scAreaarea" tamano="completo">
+                <label>Text area</label>
+                <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true"></sc-texto-area>
+                <span></span>
+            </sc-panel>
+
+            <sc-panel control="formulario.scInputmoneda" tamano="cuarto" tieneicono="true">
+                <label>Moneda</label>
+                <sc-moneda id="moneda" ng-model="d.moneda" requerido="true"></sc-moneda>
+            </sc-panel>
+
+            <sc-panel control="formulario.scRadioradio" tamano="medio" class="clearfix">
+                <label>Radio</label>
+                <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true"></sc-radio>
+            </sc-panel>
             <div class="row">
                 <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
                 <br />
@@ -136,40 +135,6 @@
                 ct.opcion = ct.opciones[1];
             }
         };
-
-        (function () {
-            console.time("TiempoMide-watchers");
-            var root = angular.element(document.getElementsByTagName('html'));
-
-            var watchers = [];
-
-            var f = function (element) {
-                angular.forEach(['$scope', '$isolateScope'], function (scopeProperty) {
-                    if (element.data() && element.data().hasOwnProperty(scopeProperty)) {
-                        angular.forEach(element.data()[scopeProperty].$$watchers, function (watcher) {
-                            watchers.push(watcher);
-                        });
-                    }
-                });
-
-                angular.forEach(element.children(), function (childElement) {
-                    f(angular.element(childElement));
-                });
-            };
-
-            f(root);
-
-            // Remove duplicate watchers
-            var watchersWithoutDuplicates = [];
-            angular.forEach(watchers, function (item) {
-                if (watchersWithoutDuplicates.indexOf(item) < 0) {
-                    watchersWithoutDuplicates.push(item);
-                }
-            });
-
-            console.log("watchers:" + watchersWithoutDuplicates.length);
-            console.timeEnd("TiempoMide-watchers");
-        })();
 
     </script>
 
