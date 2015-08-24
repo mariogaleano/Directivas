@@ -17,7 +17,7 @@
             controllerAs: 'vm',
             bindToController: {
                 control: '=',
-                tamano: '@',
+                tamano: '@',//[completo, medio, tercio, cuarto ]
                 tieneicono: '@'
             },
             transclude: true,

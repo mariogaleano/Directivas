@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap', 'ui.mask', 'textAngular', 'ui.validate']);
+    angular.module('sc.directivas', ['ui.router', 'ui.bootstrap', 'ui.mask', 'textAngular', 'ui.select']);
 
     angular.module('sc.directivas').config(function ($stateProvider, $urlRouterProvider) {
 
@@ -118,5 +118,6 @@
 
     angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num', moneda: 'moneda' });
     angular.module('sc.directivas').constant('tamanoPanel', { completo: 'completo', medio: 'medio', tercio: 'tercio', cuarto: 'cuarto' });
+    angular.module('sc.directivas').constant('tipoCombo', { normal: 'normal', multiple: 'multiple' });
 
 })();

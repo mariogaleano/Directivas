@@ -12,7 +12,7 @@
             controllerAs: 'vmt',
             bindToController: {
                 value: '=ngModel',
-                tipo: '@',//[texto,textonum,todo]
+                tipo: '@',//[texto,textonum,todo,moneda]
                 id: "@",
                 requerido: "=",
                 label: '@'

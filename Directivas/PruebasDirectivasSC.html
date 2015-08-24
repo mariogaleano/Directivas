@@ -10,6 +10,7 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/select.min.css" rel="stylesheet" />
     <link href="Content/main.css" rel="stylesheet" />
     <link href="Content/mainDirectivas.css" rel="stylesheet" />
 
@@ -27,9 +28,9 @@
     <script src='Scripts/textAngular-rangy.min.js'></script>
     <script src='Scripts/textAngular-sanitize.min.js'></script>
     <script src='Scripts/textAngular.min.js'></script>
-    <script src="Scripts/validate/validate.js"></script>
 
     <script src="Scripts/modernizr-2.8.3.js"></script>
+    <script src="Scripts/select.min.js"></script>
 
 </head>
 <body ng-controller="mainController as vm">
@@ -40,7 +41,7 @@
             <div>
                 <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
             </div>
-            <sc-panel control="formulario.scInputNumeros" tamano="medio">                
+            <sc-panel control="formulario.scInputNumeros" tamano="medio">
                 <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num" label="Solo Numeros"></sc-texto>
             </sc-panel>
             <sc-panel control="formulario.scInputtodo" tamano="medio">
@@ -54,17 +55,26 @@
                 <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto" label="Letras"></sc-texto>
             </sc-panel>
 
-            <sc-panel control="formulario.scAreaarea" tamano="completo">
+            <sc-panel control="formulario.scAreaarea" tamano="medio">
                 <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true" label="Text area"></sc-texto-area>
             </sc-panel>
-
+            <br />
             <sc-panel control="formulario.scInputmoneda" tamano="cuarto" tieneicono="true">
                 <sc-texto id="moneda" ng-model="d.moneda" requerido="true" tipo="moneda" label="Moneda"></sc-texto>
+            </sc-panel>
+            <br />
+            <sc-panel control="formulario.scComboNormal" tamano="medio" tieneicono="true">
+                <sc-combo id="normal" ng-model="d.ValorComboNormal" requerido="true" tipo="normal" label="Combo Normal" opciones="d.NormalOpciones" mostrar="Nombre"></sc-combo>
+            </sc-panel>
+
+            <sc-panel control="formulario.scComboMultiple" tamano="medio" tieneicono="true">
+                <sc-combo id="Multiple" ng-model="d.ValorComboMultiple" requerido="true" tipo="multiple" label="Combo Multiple" opciones="d.MultipleOpciones" mostrar="Nombre"></sc-combo>
             </sc-panel>
 
             <sc-panel control="formulario.scRadioradio" tamano="medio" class="clearfix">
                 <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true" label="Radio"></sc-radio>
             </sc-panel>
+
             <div class="row">
                 <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
                 <br />
@@ -75,6 +85,8 @@
                     Letras: {{d.Texto}}<br />
                     Text area: {{d.TextoArea}}<br />
                     Moneda: {{d.moneda}}<br />
+                    Combo Normal: {{d.ValorComboNormal}}<br />
+                    Combo Multiple: {{d.ValorComboMultiple}}<br />
                     Radio: {{d.opcion}}
                 </div>
 
@@ -94,6 +106,7 @@
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
     <script src="App/DirectivasSC/scRadio.js"></script>
+    <script src="App/DirectivasSC/scCombo.js"></script>
     <script src="App/DirectivasSC/Validadores/scSoloLetras.js"></script>
     <script src="App/DirectivasSC/Validadores/scSoloEnteros.js"></script>
     <script src="App/DirectivasSC/Validadores/scSoloLetrasEnteros.js"></script>
@@ -115,6 +128,18 @@
                 { Id: 1, Nombre: 'Opcion 1', Tipo: "Tipo 1" },
                 { Id: 2, Nombre: 'Opcion 2', Tipo: "Tipo 2" },
                 { Id: 3, Nombre: 'Opcion 3', Tipo: "Tipo " }
+            ];
+
+            ct.NormalOpciones = [
+                { Id: 1, Nombre: 'Normal 1', Tipo: "Tipo 1" },
+                { Id: 2, Nombre: 'Normal 2', Tipo: "Tipo 2" },
+                { Id: 3, Nombre: 'Normal 3', Tipo: "Tipo " }
+            ];
+
+            ct.MultipleOpciones = [
+                { Id: 1, Nombre: 'Multiple 1', Tipo: "Tipo 1" },
+                { Id: 2, Nombre: 'Multiple 2', Tipo: "Tipo 2" },
+                { Id: 3, Nombre: 'Multiple 3', Tipo: "Tipo " }
             ];
 
             ct.FillForm = function () {

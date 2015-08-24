@@ -1,0 +1,16 @@
+﻿<label>{{vmt.label}} <span class="txtRojo" ng-show="{{vmt.requerido}}">*</span></label>
+<div class="f-input clearfix">
+    <ui-select ng-model="vmt.value" ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }"
+               ng-attr-id="{{::'scCombo' + vmt.id}}"
+               ng-attr-name="{{::'scCombo' + vmt.id}}" ng-required="{{vmt.requerido}}"
+               theme="select2">
+        <ui-select-match placeholder="Seleccione...">{{$select.selected.Nombre}}</ui-select-match>
+        <ui-select-choices repeat="opcion in vmt.opciones"
+                           refresh-delay="1">
+            <div ng-bind-html="opcion.Nombre| highlight: $select.search"></div>
+        </ui-select-choices>
+    </ui-select>
+    <a style="cursor: pointer" ng-show="vmt.control.$invalid && vmt.control.$dirty" popover="{{vmt.tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{vmt.tooltipclass}}">
+        <i class="icon-credi-01"></i>
+    </a>
+</div>

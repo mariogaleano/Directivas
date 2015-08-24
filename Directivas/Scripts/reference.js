@@ -1,1 +1,0 @@
-﻿/// <reference path="E:\Git\Siste\Directivas\Directivas\Scripts/angular.js" />

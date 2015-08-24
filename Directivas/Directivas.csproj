@@ -52,6 +52,7 @@
     <Content Include="App\DirectivasSC\scCheckbox.js" />
     <Content Include="App\DirectivasSC\scCombo.js" />
     <Content Include="App\DirectivasSC\scFecha.js" />
+    <Content Include="App\DirectivasSC\templates\scCombo.html" />
     <Content Include="App\DirectivasSC\Validadores\scSoloMoneda.js" />
     <Content Include="App\DirectivasSC\scHora.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
@@ -80,6 +81,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\mainDirectivas.css" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select.min.css" />
     <Content Include="Content\textAngular.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -111,13 +114,13 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\angular.min.js.map" />
     <Content Include="fonts\icomoon\fonts\icomoon.ttf" />
     <Content Include="fonts\icomoon\fonts\icomoon.eot" />
     <Content Include="fonts\icomoon\fonts\icomoon.woff" />
     <Content Include="fonts\icomoon\selection.json" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="PruebasDirectivasSC.html" />
     <Content Include="Scripts\bootstrap.js" />
@@ -143,7 +146,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\reference.js" />
+    <Content Include="Scripts\select.js" />
+    <Content Include="Scripts\select.min.js" />
     <Content Include="Scripts\textAngular-rangy.min.js" />
     <Content Include="Scripts\textAngular-sanitize.min.js" />
     <Content Include="Scripts\textAngular.min.js" />
@@ -152,6 +156,7 @@
     <Content Include="Scripts\validate\validate.min.js">
       <DependentUpon>validate.js</DependentUpon>
     </Content>
+    <None Include="Scripts\_references.js" />
     <Content Include="TS Files\TSDemo.html" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
