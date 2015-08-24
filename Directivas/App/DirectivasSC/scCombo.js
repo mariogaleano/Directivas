@@ -16,7 +16,7 @@
             controllerAs: 'vmt',
             bindToController: {
                 value: '=ngModel',
-                tipo: '@',//[normal,multiple,todo]
+                tipo: '@',//[normal,multiple]
                 id: "@",
                 requerido: "=",
                 label: '@',
@@ -39,6 +39,12 @@
             scope.$watch(ctrlpanel.control, function () {
                 ctrl.control = ctrlpanel.control;
             });
+            var input = elm.find(":input");
+            if (attrs.tipo === tipoCombo.multiple) {
+                input.attr('multiple','multiple');
+            }
+            var x = angular.element(input);
+            $compile(x)(scope);
         }
     }
 
