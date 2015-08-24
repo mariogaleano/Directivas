@@ -10,7 +10,8 @@
     function scTextoHtml($window) {
         var directive = {
             link: link,
-            restrict: 'E'
+            restrict: 'E',
+            label: '@'
         };
         return directive;
 

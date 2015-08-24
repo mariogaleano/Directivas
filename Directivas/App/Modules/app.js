@@ -116,6 +116,7 @@
         }]);
     }]);
 
-    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num' });
+    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num', moneda: 'moneda' });
+    angular.module('sc.directivas').constant('tamanoPanel', { completo: 'completo', medio: 'medio', tercio: 'tercio', cuarto: 'cuarto' });
 
 })();

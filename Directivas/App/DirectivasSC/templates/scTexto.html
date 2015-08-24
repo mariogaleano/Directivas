@@ -1,8 +1,9 @@
-﻿<div class="f-input clearfix">
-    <input type="text" ng-model="vm.value" ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }" ng-attr-id="{{::'scInput' + vm.id}}"
-           ng-attr-name="{{::'scInput' + vm.id}}" ng-required="{{vm.requerido}}"
-           ng-keyup="vm.cancel($event)" ng-class="{'alerta':control.$invalid }" />
-    <a style="cursor: pointer" ng-show="control.$invalid" ng-class="{'alerta':control.$invalid }" popover="{{vm.tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{vm.tooltipclass}}">
+﻿<label>{{vmt.label}} <span class="txtRojo" ng-show="{{vmt.requerido}}">*</span></label>
+<div class="f-input clearfix">
+    <input type="text" ng-model="vmt.value" ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }" ng-attr-id="{{::'scInput' + vmt.id}}"
+           ng-attr-name="{{::'scInput' + vmt.id}}" ng-required="{{vmt.requerido}}"
+           ng-keyup="vmt.cancel($event)" />
+    <a style="cursor: pointer" ng-show="vmt.control.$invalid && vmt.control.$dirty" popover="{{vmt.tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{vmt.tooltipclass}}">
         <i class="icon-credi-01"></i>
     </a>
 </div>

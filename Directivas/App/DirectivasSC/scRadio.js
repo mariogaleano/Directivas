@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
     angular
@@ -6,8 +6,8 @@
         .directive('scRadio', scRadio);
 
     scRadio.$inject = ['$window'];
-    
-    function scRadio ($window) {       
+
+    function scRadio($window) {
         var directive = {
             link: link,
             restrict: 'E',
@@ -15,14 +15,15 @@
                 value: '=ngModel',
                 opciones: '=opciones',
                 id: '@',
-                requerido: "="
+                requerido: "=",
+                label: '@'
             },
             templateUrl: 'app/DirectivasSC/Templates/scRadio.html'
         };
         return directive;
 
         function link(scope, element, attrs) {
-            scope.optValue = attrs.optValue;            
+            scope.optValue = attrs.optValue;
         }
     }
 })();

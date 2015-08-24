@@ -52,13 +52,9 @@
     <Content Include="App\DirectivasSC\scCheckbox.js" />
     <Content Include="App\DirectivasSC\scCombo.js" />
     <Content Include="App\DirectivasSC\scFecha.js" />
-    <Content Include="App\DirectivasSC\scFormatoMoneda.js" />
+    <Content Include="App\DirectivasSC\Validadores\scSoloMoneda.js" />
     <Content Include="App\DirectivasSC\scHora.js" />
-    <Content Include="App\DirectivasSC\scMoneda.js" />
     <Content Include="App\DirectivasSC\scNumero.js" />
-    <Content Include="App\DirectivasSC\templates\scPanelcompleto.html" />
-    <Content Include="App\DirectivasSC\templates\scPanelcuarto.html" />
-    <Content Include="App\DirectivasSC\templates\scPanelmedio.html" />
     <Content Include="App\DirectivasSC\Validadores\scServerEval.js" />
     <Content Include="App\DirectivasSC\Validadores\scSoloLetras.js" />
     <Content Include="App\DirectivasSC\scRadio.js" />
@@ -67,7 +63,6 @@
     <Content Include="App\DirectivasSC\scTexto.js" />
     <Content Include="App\DirectivasSC\scTextoArea.js" />
     <Content Include="App\DirectivasSC\templates\scPanel.html" />
-    <Content Include="App\DirectivasSC\templates\scMoneda.html" />
     <Content Include="App\DirectivasSC\templates\scRadio.html" />
     <Content Include="App\DirectivasSC\templates\scTextoArea.html" />
     <Content Include="App\DirectivasSC\templates\scTexto.html" />
@@ -148,6 +143,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\reference.js" />
     <Content Include="Scripts\textAngular-rangy.min.js" />
     <Content Include="Scripts\textAngular-sanitize.min.js" />
     <Content Include="Scripts\textAngular.min.js" />

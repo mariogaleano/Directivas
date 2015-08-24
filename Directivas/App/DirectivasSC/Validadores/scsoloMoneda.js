@@ -1,18 +1,16 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
-    angular
-        .module('sc.directivas')
-        .directive('format', scFormatoMoneda);
+    angular.module('sc.directivas').directive('soloMoneda', scSoloMoneda);
 
-    scFormatoMoneda.$inject = ['$window', '$filter'];
-    
-    function scFormatoMoneda($window, $filter) {
-       
+    scSoloMoneda.$inject = ['$window', '$filter'];
+
+    function scSoloMoneda($window, $filter) {
+
         var directive = {
             link: link,
-            require: '?ngModel',
-            restrict: 'A'            
+            require: '^ngModel',
+            restrict: 'A'
         };
         return directive;
 
@@ -29,12 +27,12 @@
                 if (a === "")
                     return;
 
-                return '$' + $filter(attrs.format)(ctrl.$modelValue)
+                return '$' + $filter(attrs.soloMoneda)(ctrl.$modelValue)
             });
 
             ctrl.$parsers.unshift(function (viewValue) {
                 var plainNumber = viewValue.replace(/[^\d.\',']/g, '').replace(/[^\d]/g, '');
-                var valorLimpio = ($filter(attrs.format)(plainNumber)).replace(/,/g, ',');
+                var valorLimpio = ($filter(attrs.soloMoneda)(plainNumber)).replace(/,/g, ',');
 
                 if (plainNumber === "") {
                     elem.val('');

@@ -1,6 +1,8 @@
-﻿ <div class="radio" ng-repeat="opcion in opciones">
+﻿
+<label>{{vm.label}} <span class="txtRojo" ng-show="{{vm.requerido}}">*</span></label>
+<div class="f-input clearfix" ng-repeat="opcion in opciones">
     <label>
-        <input type="radio" ng-value="{{opcion}}" class="f-input clearfix" ng-model="$parent.value" ng-attr-name="{{::'scRadio' + id}}" ng-attr-id="{{::'scInput' + vm.id}}" ng-required="{{requerido}}"/>
+        <input type="radio" ng-value="{{opcion}}" class="f-input clearfix" ng-model="$parent.value" ng-attr-name="{{::'scRadio' + id}}" ng-attr-id="{{::'scInput' + vm.id}}" ng-required="{{requerido}}" />
         {{opcion[optValue]}}
     </label>
 </div>

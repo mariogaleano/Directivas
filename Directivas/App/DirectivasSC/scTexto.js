@@ -6,46 +6,56 @@
     function scTexto($window, $compile, tipoInput) {
         var directive = {
             require: ['^ngModel', '^scPanel'],
-            controller: Ctrl,
+            controller: ['$element', '$attrs', Ctrl],
             link: link,
             restrict: 'E',
-            controllerAs: 'vm',
-            bindToController: true,
-            scope: {
+            controllerAs: 'vmt',
+            bindToController: {
                 value: '=ngModel',
                 tipo: '@',//[texto,textonum,todo]
                 id: "@",
-                requerido: "="
+                requerido: "=",
+                label: '@'
             },
+            scope: {},
             templateUrl: 'app/DirectivasSC/Templates/scTexto.html'
         };
-        Ctrl.$inject = ['$scope'];
+
         return directive;
 
 
-        function Ctrl($scope) {
-            var vm = this;
-            //console.log("value=" + this.value);
-            //console.log("tipo=" + this.tipo);
-            //console.log("id=" + this.id);
-            //console.log("req=" + this.requerido);
+        function Ctrl($element, $attrs) {
+            var vmt = this;
             this.cancel = function (e) {
                 if (e.keyCode == 27) {
-                    console.log("control=" + JSON.stringify($scope.control));
-                    $scope.control.$$lastCommittedViewValue = $scope.control$viewValue;
-                    $scope.control.$rollbackViewValue();
+                    //console.log("control val=" + JSON.stringify(this.control));
+                    //console.log("control view val=" + JSON.stringify(this.control.$viewValue));
+                    //console.log("control last commited val=" + JSON.stringify(this.control.$$lastCommittedViewValue));
+                    //this.control.$$lastCommittedViewValue = this.control.$viewValue;
+                    //this.control.$rollbackViewValue();
                 }
             };
+            this.mostrarError = function () {
+                return true;
+                //if (vmt.control.$invalid) {
+                //}
+                //else {
+                //    return false;
+                //}
+            };
+
+
             ///este valor cambiara segun el tipo de error
-            vm.tooltip = "Valor Errado";
-            vm.tooltipclass = "errornegocio";
+            this.tooltip = "Valor Errado";
+            this.tooltipclass = "errornegocio";
 
         }
         function link(scope, elm, attrs, controllers) {
             var ngModel = controllers[0];
             var ctrlpanel = controllers[1];
+            var ctrl = scope.vmt;
             scope.$watch(ctrlpanel.control, function () {
-                scope.control = ctrlpanel.control;                
+                ctrl.control = ctrlpanel.control;
             });
             var input = elm.find(":input");
 
@@ -60,6 +70,9 @@
                     break;
                 case tipoInput.num:
                     input.attr("solo-enteros", "");
+                    break;
+                case tipoInput.moneda:
+                    input.attr("solo-moneda", "number");
                     break;
                 default:
                     break;

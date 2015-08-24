@@ -3,6 +3,8 @@
    ========================================================================== */
 .alerta i{color:orange;}
 .alerta input{border:solid 1px orange}
+.error i{color:red;}
+.error input{border:solid 1px red}
 .multiCheck-lg-50{width: 50%;}
 .multiCheck-lg-25{width: 25%;}
 .f-control{margin-bottom: 15px;padding:0 10px;}

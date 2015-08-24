@@ -1,5 +1,2 @@
-﻿<div class="f-control" >
-    <div ng-transclude></div>
-    <span class="fa fa-exclamation-circle pull-right" ng-show="vm.control.$invalid"
-          tooltip="{{vm.tooltip}}" tooltip-placement="top" tooltip-trigger="click" tooltip-class="{{vm.tooltipclass}}"></span>
+﻿<div class="{{vm.claseTamano()}}" ng-class="{'error f-controlIconRight' : vm.control.$invalid && vm.control.$dirty}"  ng-transclude>
 </div>
