@@ -24,13 +24,14 @@
 
             ctrl.$formatters.unshift(function (a) {
 
-                if (a === "")
+                if (a === "" || ctrl.$modelValue === undefined)
                     return;
 
-                return '$' + $filter(attrs.soloMoneda)(ctrl.$modelValue)
+                return '$' + $filter('number')(ctrl.$modelValue)
             });
 
             ctrl.$parsers.unshift(function (viewValue) {
+
                 var plainNumber = viewValue.replace(/[^\d.\',']/g, '').replace(/[^\d]/g, '');
                 var valorLimpio = ($filter(attrs.soloMoneda)(plainNumber)).replace(/,/g, ',');
 

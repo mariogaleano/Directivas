@@ -1,83 +1,278 @@
 /* ==========================================================================
    Formularios
    ========================================================================== */
-.alerta i{color:orange;}
-.alerta input{border:solid 1px orange}
-.error i{color:red;}
-.error input{border:solid 1px red}
-.multiCheck-lg-50{width: 50%;}
-.multiCheck-lg-25{width: 25%;}
-.f-control{margin-bottom: 15px;padding:0 10px;}
-.f-lg-100{width: 100%;}
-.f-lg-50 {width: 50%;}
-.f-lg-75{width: 75%;}
-.f-lg-25{width: 25%;}
-.f-control input[type="text"], .f-control select{width: 100%;height: 35px;padding: 8px;}
-.f-control label{font-family: 'Open Sans', sans-serif;font-size: .8em;margin-bottom: 5px;}
-.f-controlIconRight input[type="text"]{width: 100%;float:left;display: table-cell;position: relative;z-index: 2;}
-.f-controlIconRight i.icoEsp{font-size: 1.8em;position: absolute;z-index: 2;right: 0;top:3px;}
-.f-controlLabel label{display: block;margin:3px 0 0 5px;}
-.f-controlClear{clear: both;}
-.f-control.f-controlInLine input[type="text"]{width: 48%;}
-.label-check {line-height: 20px;margin-left: 9px;}
-.select2-container--default .select2-selection--single{-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
-.select2-container .select2-selection--single{height: 35px;}
-.select2-container--default .select2-selection--single .select2-selection__arrow{height: 32px;}
-.txtRojo{color: red;}
-.f-controlIconRight .f-input{position: relative;z-index: 1;display: table;}
-.f-controlIconRight a {font-size: 2.1em;position: relative;width: 1%;display: table-cell;    vertical-align: middle;}
-.f-controlIconRight i{margin-left: 4px;}
-a:hover, a:focus{text-decoration: none;}
+.alerta i {
+    color: orange;
+}
+
+.error i {
+    color: #e00109;
+}
+
+.alerta input {
+    border: solid 1px orange;
+}
+
+.error input {
+    border: solid 1px #e00109;
+}
+
+.multiCheck-lg-50 {
+    width: 50%;
+}
+
+.multiCheck-lg-25 {
+    width: 25%;
+}
+
+.f-control {
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.f-lg-100 {
+    width: 100%;
+}
+
+.f-lg-50 {
+    width: 50%;
+}
+
+.f-lg-75 {
+    width: 75%;
+}
+
+.f-lg-25 {
+    width: 25%;
+}
+
+.f-control input[type="text"], .f-control select, .f-control textarea {
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+}
+
+.f-control textarea {
+    height: 130px;
+    border: solid 1px #ccc;
+}
+
+.f-control label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    margin-bottom: 5px;
+}
+
+.f-controlIconRight input[type="text"] {
+    width: 100%;
+    float: left;
+    display: table-cell;
+    position: relative;
+    z-index: 2;
+}
+
+.f-controlIconRight i.icoEsp {
+    font-size: 1.8em;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 3px;
+}
+
+.f-controlLabel label {
+    display: block;
+    margin: 3px 0 0 5px;
+}
+
+.f-controlClear {
+    clear: both;
+}
+
+.f-control.f-controlInLine input[type="text"] {
+    width: 48%;
+}
+
+.label-check {
+    line-height: 20px;
+    margin-left: 9px;
+}
+
+.select2-container--default .select2-selection--single {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.select2-container .select2-selection--single {
+    height: 35px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 32px;
+}
+
+.txtRojo {
+    color: red;
+}
+
+.f-controlIconRight .f-input {
+    position: relative;
+    z-index: 1;
+    display: table;
+}
+
+.f-controlIconRight .box-contAlertIcon {
+    font-size: 2.46em;
+    position: relative;
+    width: 1%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    .f-controlIconRight .box-contAlertIcon a, .f-controlIconRight .box-contAlertIcon i {
+        display: block;
+        line-height: 34px;
+    }
+
+.f-controlIconRight.ok .box-contAlertIcon a, .f-controlIconRight.ok .box-contAlertIcon i {
+    display: none;
+}
+
+.f-controlIconRight.ok .f-input {
+    display: block;
+}
+
+.f-controlIconRight i {
+    margin-left: 4px;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Popover
+   ========================================================================== */
+.f-control {
+    position: relative;
+}
+
+    .f-control .popover {
+        max-width: 100% !important;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        left: 0!important;
+          width: 100% !important;;
+        right: 0;
+    }
+
+        .f-control .popover.top > .arrow {
+            left: 98% !important;
+            right: 10px;
+        }
+
+    .f-control.alerta .popover {
+        max-width: 100% !important;
+        border-color: orange;
+        background: orange;
+        color: #fff;
+    }
+
+        .f-control.alerta .popover.top > .arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 11px 0 11px;
+            border-color: #ffa600 transparent transparent;
+            left
+        }
+
+            .f-control.alerta .popover.top > .arrow:after {
+                border-top-color: orange;
+            }
+
+        .f-control.alerta .popover.right > .arrow:after {
+            border-right-color: orange;
+        }
+
+        .f-control.alerta .popover.bottom > .arrow:after {
+            border-bottom-color: orange;
+        }
+
+        .f-control.alerta .popover.left > .arrow:after {
+            border-left-color: orange;
+        }
+
+    .f-control.error .popover {
+        max-width: 100% !important;
+        border-color: #e00109;
+        background: #e00109;
+        color: #fff;
+    }
+
+        .f-control.error .popover.top > .arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 11px 0 11px;
+            border-color: #ffa600 transparent transparent;
+        }
+
+            .f-control.error .popover.top > .arrow:after {
+                border-top-color: #e00109;
+            }
+
+        .f-control.error .popover.right > .arrow:after {
+            border-right-color: #e00109;
+        }
+
+        .f-control.error .popover.bottom > .arrow:after {
+            border-bottom-color: #e00109;
+        }
+
+        .f-control.error .popover.left > .arrow:after {
+            border-left-color: #e00109;
+        }
 
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (max-width : 1200px) {
- 
 }
 
 @media only screen and (max-width : 1040px) {
-
 }
 
 @media only screen and (max-width : 1024px) {
-	
 }
 
 @media only screen and (max-width : 979px) {
-	.multiCheck-md-50{width: 50%;}
-	.f-md-50{width: 50%;}
+    .multiCheck-md-50 {
+        width: 50%;
+    }
+
+    .f-md-50 {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width : 767px) {
-	
-
 }
 
 @media only screen and (max-width : 480px) {
-	.multiCheck-sm-100{width: 100%;}
-	.f-sm-100{width: 100%;}
+    .multiCheck-sm-100 {
+        width: 100%;
+    }
+
+    .f-sm-100 {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width : 320px) {
-	.f-xs-100{width: 100%;}
-
+    .f-xs-100 {
+        width: 100%;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

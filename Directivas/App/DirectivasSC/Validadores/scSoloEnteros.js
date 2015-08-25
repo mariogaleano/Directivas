@@ -12,9 +12,14 @@
         return directiva;
 
         function link(scope, elm, attrs, ngModel) {
-            ngModel.$validators.soloEnteros = function (valor) {
-                return NUMBERS_REGEX.test(valor);
-            }
+
+            scope.$watch(attrs.ngModel, function (value) {
+                ngModel.$setValidity('soloEnteros', NUMBERS_REGEX.test(value));
+            });
+
+            //ngModel.$validators.soloEnteros = function (valor) {
+            //    return NUMBERS_REGEX.test(valor);
+            //}
         };
     }
 })();

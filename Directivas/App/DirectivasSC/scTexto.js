@@ -28,13 +28,59 @@
             var vmt = this;
             this.cancel = function (e) {
                 if (e.keyCode == 27) {
-                    //console.log("control val=" + JSON.stringify(this.control));
-                    //console.log("control view val=" + JSON.stringify(this.control.$viewValue));
-                    //console.log("control last commited val=" + JSON.stringify(this.control.$$lastCommittedViewValue));
-                    //this.control.$$lastCommittedViewValue = this.control.$viewValue;
-                    //this.control.$rollbackViewValue();
+                    console.log("control val=" + JSON.stringify(this.control));
+                    console.log("control view val=" + JSON.stringify(this.control.$viewValue));
+                    console.log("control last commited val=" + JSON.stringify(this.control.$$lastCommittedViewValue));
+                    this.control.$$lastCommittedViewValue = this.control.$viewValue;
+                    this.control.$rollbackViewValue();
                 }
             };
+            vmt.tooltipVisible = false;
+
+            vmt.tolltip = function () {
+                var mensajeError = '';
+                if (vmt.control.$invalid) {
+                    var errores = vmt.control.$error;
+                    if (errores.required) {
+                        if (mensajeError != '')
+                            mensajeError += ' y ';
+                        mensajeError += "Valor Requerido";
+                    }
+                    if (errores.soloEnteros) {
+                        if (mensajeError != '')
+                            mensajeError += ' y ';
+                        mensajeError += "Solo Numeros Permitidos";
+                    }
+                    if (errores.soloLetras) {
+                        if (mensajeError != '')
+                            mensajeError += ' y ';
+                        mensajeError += "Solo Letras Permitidos";
+                    }
+                    if (errores.soloLetrasEnteros) {
+                        if (mensajeError != '')
+                            mensajeError += ' y ';
+                        mensajeError += "Solo Numeros y Letras Permitidos";
+                    }
+                    if (errores.soloMoneda) {
+                        if (mensajeError != '')
+                            mensajeError += ' y ';
+                        mensajeError += "Solo Formato Moneda";
+                    }
+                }
+                var input = $element.find(":input");
+                $(input).popover({
+                    content: mensajeError,
+                    placement: 'top'
+                });
+                if (vmt.tooltipVisible) {
+                    $(input).popover('destroy');
+                    vmt.tooltipVisible = false;
+                }
+                else {
+                    vmt.tooltipVisible = true;
+                    $(input).popover('show');
+                }
+            }
             this.mostrarError = function () {
                 return true;
                 //if (vmt.control.$invalid) {
@@ -44,10 +90,6 @@
                 //}
             };
 
-
-            ///este valor cambiara segun el tipo de error
-            this.tooltip = "Valor Errado";
-            this.tooltipclass = "errornegocio";
 
         }
         function link(scope, elm, attrs, controllers) {

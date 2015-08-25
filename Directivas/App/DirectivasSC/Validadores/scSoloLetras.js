@@ -13,9 +13,12 @@
         return directiva;
 
         function link(scope, elm, attrs, ngModel) {
-            ngModel.$validators.soloLetras = function (valor) {
-                return TEXT_REGEX.test(valor);
-            }
+            scope.$watch(attrs.ngModel, function (value) {
+                ngModel.$setValidity('soloLetras', TEXT_REGEX.test(value));
+            });
+            //ngModel.$validators.soloLetras = function (valor) {
+            //    return TEXT_REGEX.test(valor);
+            //}
         };
     }
 })();
