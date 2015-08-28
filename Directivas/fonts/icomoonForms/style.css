@@ -1,0 +1,91 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?fzcmip');
+	src:url('fonts/icomoon.eot?#iefixfzcmip') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?fzcmip') format('truetype'),
+		url('fonts/icomoon.woff?fzcmip') format('woff'),
+		url('fonts/icomoon.svg?fzcmip#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-credinetFont-01:before {
+	content: "\e600";
+}
+.icon-credinetFont-02:before {
+	content: "\e601";
+}
+.icon-credinetFont-03:before {
+	content: "\e602";
+}
+.icon-credinetFont-04:before {
+	content: "\e603";
+}
+.icon-credinetFont-05:before {
+	content: "\e604";
+}
+.icon-credinetFont-06:before {
+	content: "\e605";
+}
+.icon-credinetFont-07:before {
+	content: "\e606";
+}
+.icon-credinetFont-08:before {
+	content: "\e607";
+}
+.icon-credinetFont-09:before {
+	content: "\e608";
+}
+.icon-credinetFont-10:before {
+	content: "\e609";
+}
+.icon-credinetFont-11:before {
+	content: "\e60a";
+}
+.icon-credinetFont-12:before {
+	content: "\e60b";
+}
+.icon-credinetFont-13:before {
+	content: "\e60c";
+}
+.icon-credinetFont-14:before {
+	content: "\e60d";
+}
+.icon-credinetFont-15:before {
+	content: "\e60e";
+}
+.icon-credinetFont-16:before {
+	content: "\e60f";
+}
+.icon-credinetFont-17:before {
+	content: "\e610";
+}
+.icon-credinetFont-18:before {
+	content: "\e611";
+}
+.icon-credinetFont-21:before {
+	content: "\e612";
+}
+.icon-credinetFont-20:before {
+	content: "\e613";
+}
+.icon-credinetFont-19:before {
+	content: "\e614";
+}
+.icon-credinetFont-22:before {
+	content: "\e615";
+}

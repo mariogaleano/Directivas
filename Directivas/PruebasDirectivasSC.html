@@ -1,5 +1,10 @@
 ﻿<!DOCTYPE html>
-<html ng-app="sc.directivas">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" ng-app="sc.directivas">
+<!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,6 +16,7 @@
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/select.min.css" rel="stylesheet" />
+    <link href="Content/mainFormularios.css" rel="stylesheet" />
     <link href="Content/main.css" rel="stylesheet" />
     <link href="Content/mainDirectivas.css" rel="stylesheet" />
 
@@ -19,9 +25,10 @@
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <link href="fonts/icomoonForms/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
     <link rel='stylesheet' href='Content/textAngular.css'>
@@ -34,69 +41,105 @@
 
 </head>
 <body ng-controller="mainController as vm">
-
-    <h1>Test desde github</h1>
-    <div ng-controller="demo as d" class="container">
-        <form name="formulario" novalidate class="clearfix">
-            <div>
-                <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
-            </div>
-            <sc-panel control="formulario.scInputNumeros" tamano="medio">
-                <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num" label="Solo Numeros"></sc-texto>
-            </sc-panel>
-            <sc-panel control="formulario.scInputtodo" tamano="medio">
-                <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo" label="Texto abierto"></sc-texto>
-            </sc-panel>
-            <sc-panel control="formulario.scInputtextonum" tamano="completo">
-                <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum" label="Letras y números"></sc-texto>
-            </sc-panel>
-
-            <sc-panel control="formulario.scInputletras" tamano="completo">
-                <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto" label="Letras"></sc-texto>
-            </sc-panel>
-
-            <sc-panel control="formulario.scAreaarea" tamano="medio">
-                <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true" label="Text area"></sc-texto-area>
-            </sc-panel>
-            <br />
-            <sc-panel control="formulario.scInputmoneda" tamano="cuarto" tieneicono="true">
-                <sc-texto id="moneda" ng-model="d.moneda" requerido="true" tipo="moneda" label="Moneda"></sc-texto>
-            </sc-panel>
-            <br />
-            <sc-panel control="formulario.scComboNormal" tamano="medio" tieneicono="true">
-                <sc-combo id="normal" ng-model="d.ValorComboNormal" requerido="true" tipo="normal" label="Combo Normal" opciones="d.NormalOpciones" mostrar="Nombre"></sc-combo>
-            </sc-panel>
-
-            <sc-panel control="formulario.scComboMultiple" tamano="medio" tieneicono="true">
-                <sc-combo id="Multiple" ng-model="d.ValorComboMultiple" requerido="true" tipo="multiple" label="Combo Multiple" opciones="d.MultipleOpciones" mostrar="Nombre"></sc-combo>
-            </sc-panel>
-
-            <sc-panel control="formulario.scRadioradio" tamano="medio" class="clearfix">
-                <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true" label="Radio"></sc-radio>
-            </sc-panel>
-
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">Esta usando un navegador <strong>desactualizado</strong> . Por favor <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ng-controller="demo as d">
+        <div class="bg-action alpha60" ng-show="d.BarraVisible"></div>
+        <div class="container-fluid bgGrisClaro header barraMenu">
             <div class="row">
-                <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
-                <br />
-                <div class="alert alert-info container-fluid panel-collapse">
-                    Texto abierto: {{d.Todo}}<br />
-                    Numeros: {{d.Numeros}}<br />
-                    Letras y números: {{d.TextoNumero}}<br />
-                    Letras: {{d.Texto}}<br />
-                    Text area: {{d.TextoArea}}<br />
-                    Moneda: {{d.moneda}}<br />
-                    Combo Normal: {{d.ValorComboNormal}}<br />
-                    Combo Multiple: {{d.ValorComboMultiple}}<br />
-                    Radio: {{d.opcion}}
-                </div>
+                <div class="col-md-12">
+                    <div class="box-menu pull-left">
+                        <img src="img/logo_03.jpg" alt="" class="img-logo pull-left">
+                    </div>
+                    <div class="box-searchCont pull-right">
+                        <a style="cursor:pointer" class="bl pull-right icoMenu" ng-click="d.MostrarBarra()"><i class="fa fa-th"></i></a>
+                        <span class="pull-right icoBell"><i class="fa fa-bell"></i></span>
+                        <img src="img/thumbUser_03.jpg" alt="" class="pull-right imgThumbUser">
+                        <div class="box-secion pull-right txtAzulGris txtXS">
+                            <span class="txt-nombre bl ">Hola, Edisson Sánchez Vélez</span>
+                        </div>
+                        <form class="form-inline pull-right">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="search" placeholder="Buscar cliente por nombre o cédula...">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btnSearch"><i class="icon-credinetFont-15"></i></button>
+                        </form>
 
+                    </div>
+                </div><!-- fin col-md-12 -->
             </div>
-        </form>
-        <pre>
+            <div class="box-submenu clearfix" ng-show="d.BarraVisible">
+                <a href="#" class="pull-right"><i class="fa fa-sliders"></i> Configuraciones</a>
+                <a href="#" class="pull-right"><i class="fa fa-pencil-square-o"></i> Informes</a>
+                <a href="#" class="pull-right"><i class="fa fa-archive"></i> Cierres</a>
+                <a href="#" class="pull-right"><i class="fa fa-cog"></i> Acciones</a>
+            </div><!-- fin box-submenu -->
+        </div><!-- fin container-fluid -->
+        <h1>Test desde github</h1>
+        <div class="container">
+            <form name="formulario" novalidate class="clearfix">
+                <div>
+                    <a href="" ng-click="d.FillForm()">Llenar Formulario</a>
+                </div>
+                <sc-panel control="formulario.scInputNumeros" tamano="medio">
+                    <sc-texto id="Numeros" ng-model="d.Numeros" requerido="true" tipo="num" label="Solo Numeros"></sc-texto>
+                </sc-panel>
+                <sc-panel control="formulario.scInputtodo" tamano="medio">
+                    <sc-texto id="todo" ng-model="d.Todo" requerido="true" tipo="todo" label="Texto abierto"></sc-texto>
+                </sc-panel>
+                <sc-panel control="formulario.scInputtextonum" tamano="completo">
+                    <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum" label="Letras y números"></sc-texto>
+                </sc-panel>
+
+                <sc-panel control="formulario.scInputletras" tamano="completo">
+                    <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto" label="Letras"></sc-texto>
+                </sc-panel>
+
+                <sc-panel control="formulario.scAreaarea" tamano="medio">
+                    <sc-texto-area id="area" ng-model="d.TextoArea" requerido="true" label="Text area"></sc-texto-area>
+                </sc-panel>
+                <br />
+                <sc-panel control="formulario.scInputmoneda" tamano="cuarto" tieneicono="true">
+                    <sc-texto id="moneda" ng-model="d.moneda" requerido="true" tipo="moneda" label="Moneda"></sc-texto>
+                </sc-panel>
+                <br />
+                <sc-panel control="formulario.scComboNormal" tamano="medio" tieneicono="true">
+                    <sc-combo id="normal" ng-model="d.ValorComboNormal" requerido="true" tipo="normal" label="Combo Normal" opciones="d.NormalOpciones" mostrar="Nombre"></sc-combo>
+                </sc-panel>
+
+                <sc-panel control="formulario.scComboMultiple" tamano="medio" tieneicono="true">
+                    <sc-combo id="Multiple" ng-model="d.ValorComboMultiple" requerido="true" tipo="multiple" label="Combo Multiple" opciones="d.MultipleOpciones" mostrar="Nombre"></sc-combo>
+                </sc-panel>
+
+                <sc-panel control="formulario.scRadioradio" tamano="medio" class="clearfix">
+                    <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true" label="Radio"></sc-radio>
+                </sc-panel>
+
+                <div class="row">
+                    <input type="button" value="Aceptar" ng-disabled="formulario.$invalid" class="btn btn-primary" />
+                    <br />
+                    <div class="alert alert-info container-fluid panel-collapse">
+                        Texto abierto: {{d.Todo}}<br />
+                        Numeros: {{d.Numeros}}<br />
+                        Letras y números: {{d.TextoNumero}}<br />
+                        Letras: {{d.Texto}}<br />
+                        Text area: {{d.TextoArea}}<br />
+                        Moneda: {{d.moneda}}<br />
+                        Combo Normal: {{d.ValorComboNormal}}<br />
+                        Combo Multiple: {{d.ValorComboMultiple}}<br />
+                        Radio: {{d.opcion}}
+                    </div>
+
+                </div>
+            </form>
+            <pre>
             {{ formulario | json }}
         </pre>
+        </div>
     </div>
-
 
     <script src="Scripts/mask.js"></script>
     <script src="App/Modules/app.js"></script>
@@ -121,6 +164,7 @@
         function demo($scope) {
 
             var ct = this;
+            ct.BarraVisible = false;
 
             ct.valor = 100;
 
@@ -149,6 +193,15 @@
                 ct.TextoArea = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.";
                 ct.moneda = 456700;
                 ct.opcion = ct.opciones[1];
+            }
+
+            ct.MostrarBarra = function () {
+                if (ct.BarraVisible) {
+                    ct.BarraVisible = false;
+                }
+                else {
+                    ct.BarraVisible = true;
+                }
             }
         };
 

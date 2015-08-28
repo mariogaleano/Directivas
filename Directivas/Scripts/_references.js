@@ -21,6 +21,7 @@
 /// <reference path="../App/Modules/app.js" />
 /// <reference path="../App/Modules/appmaquetacion.js" />
 /// <reference path="../fonts/icomoon/demo-files/demo.js" />
+/// <reference path="../fonts/icomoonforms/demo-files/demo.js" />
 /// <reference path="angular.min.js" />
 /// <reference path="angular-mocks.js" />
 /// <reference path="angular-ui/ui-bootstrap.js" />
