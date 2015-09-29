@@ -1,4 +1,5 @@
-﻿(function () {
+/*globals angular*/
+(function () {
     'use strict';
 
     angular.module('sc.directivas').directive('scCombo', scCombo);
@@ -28,22 +29,28 @@
         };
         return directive;
 
-        function Ctrl($element, $attrs) {
+        function Ctrl() {
             var vmt = this;
         }
 
         function link(scope, elm, attrs, controllers) {
-            var ngModel = controllers[0];
+            
             var ctrlpanel = controllers[1];
             var ctrl = scope.vmt;
+			
+			
             scope.$watch(ctrlpanel.control, function () {
                 ctrl.control = ctrlpanel.control;
             });
+			
             var input = elm.find(":input");
+			
             if (attrs.tipo === tipoCombo.multiple) {
                 input.attr('multiple','multiple');
             }
+			
             var x = angular.element(input);
+			
             $compile(x)(scope);
         }
     }

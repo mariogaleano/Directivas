@@ -1,12 +1,15 @@
-﻿(function () {
+/*globals angular*/
+(function () {
     'use strict';
-    angular.module('sc.directivas').directive('scTexto', scTexto);
+    angular
+		.module('sc.directivas')
+		.directive('scTexto', scTexto);
 
-    scTexto.$inject = ['$window', '$compile', 'tipoInput'];
-    function scTexto($window, $compile, tipoInput) {
+    scTexto.$inject = ['$compile', 'tipoInput'];
+    function scTexto($compile, tipoInput) {
         var directive = {
             require: ['^ngModel', '^scPanel'],
-            controller: ['$element', '$attrs', Ctrl],
+            controller: ['$rootScope','$element', '$attrs', Ctrl],
             link: link,
             restrict: 'E',
             controllerAs: 'vmt',
@@ -24,83 +27,75 @@
         return directive;
 
 
-        function Ctrl($element, $attrs) {
+        function Ctrl($rootScope, $element) {
             var vmt = this;
             this.cancel = function (e) {
                 if (e.keyCode == 27) {
-                    console.log("control val=" + JSON.stringify(this.control));
-                    console.log("control view val=" + JSON.stringify(this.control.$viewValue));
-                    console.log("control last commited val=" + JSON.stringify(this.control.$$lastCommittedViewValue));
-                    this.control.$$lastCommittedViewValue = this.control.$viewValue;
-                    this.control.$rollbackViewValue();
+                    vmt.control.$$lastCommittedViewValue = vmt.control.$viewValue;
+                    vmt.control.$rollbackViewValue();
                 }
             };
+			console.log($rootScope);
             vmt.tooltipVisible = false;
-
+			
             vmt.tolltip = function () {
-                var mensajeError = '';
+				var mensajeError;
                 if (vmt.control.$invalid) {
+					
                     var errores = vmt.control.$error;
-                    if (errores.required) {
-                        if (mensajeError != '')
-                            mensajeError += ' y ';
-                        mensajeError += "Valor Requerido";
+					
+                	mensajeError = (errores.required) ? "Valor Requerido" : '' ;
+					
+                    switch(true) {
+						case errores.soloEnteros:
+							mensajeError += (mensajeError != '' ) ? ' y ' : '';
+                        	mensajeError += "Solo Numeros Permitidos";
+							break;
+						case errores.soloLetras: 
+							mensajeError += (mensajeError != '' ) ? ' y ' : '';
+                        	mensajeError += "Solo Letras Permitidos";
+							break;
+						case errores.soloLetrasEnteros:
+							mensajeError += (mensajeError != '' ) ? ' y ' : '';
+                        	mensajeError += "Solo Numeros y Letras Permitidos";
+							break;
+						case errores.soloMoneda:
+							mensajeError += (mensajeError != '' ) ? ' y ' : '';
+                        	mensajeError += "Solo Formato Moneda";
+							break;
                     }
-                    if (errores.soloEnteros) {
-                        if (mensajeError != '')
-                            mensajeError += ' y ';
-                        mensajeError += "Solo Numeros Permitidos";
-                    }
-                    if (errores.soloLetras) {
-                        if (mensajeError != '')
-                            mensajeError += ' y ';
-                        mensajeError += "Solo Letras Permitidos";
-                    }
-                    if (errores.soloLetrasEnteros) {
-                        if (mensajeError != '')
-                            mensajeError += ' y ';
-                        mensajeError += "Solo Numeros y Letras Permitidos";
-                    }
-                    if (errores.soloMoneda) {
-                        if (mensajeError != '')
-                            mensajeError += ' y ';
-                        mensajeError += "Solo Formato Moneda";
-                    }
-                }
+					
+				}
                 var input = $element.find(":input");
-                $(input).popover({
+                input.popover({
                     content: mensajeError,
                     placement: 'top'
                 });
                 if (vmt.tooltipVisible) {
-                    $(input).popover('destroy');
+                    input.popover('destroy');
                     vmt.tooltipVisible = false;
-                }
-                else {
+                } else {
                     vmt.tooltipVisible = true;
-                    $(input).popover('show');
+                    input.popover('show');
                 }
-            }
-            this.mostrarError = function () {
+            };
+            vmt.mostrarError = function () {
                 return true;
-                //if (vmt.control.$invalid) {
-                //}
-                //else {
-                //    return false;
-                //}
             };
 
 
         }
         function link(scope, elm, attrs, controllers) {
-            var ngModel = controllers[0];
+			
             var ctrlpanel = controllers[1];
             var ctrl = scope.vmt;
+			
             scope.$watch(ctrlpanel.control, function () {
                 ctrl.control = ctrlpanel.control;
             });
+			
             var input = elm.find(":input");
-
+			
             switch (attrs.tipo) {
                 case tipoInput.todo:
                     break;
@@ -114,12 +109,12 @@
                     input.attr("solo-enteros", "");
                     break;
                 case tipoInput.moneda:
+					var simbolo = '<span class="icn-moneda">' + attrs.simbolo + '</span>';
                     input.attr("solo-moneda", "number");
-                    break;
-                default:
+					input.parent().prepend(simbolo);
                     break;
             }
-
+			
             var x = angular.element(input);
             $compile(x)(scope);
 

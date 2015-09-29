@@ -1,18 +1,22 @@
-﻿/// <reference path="E:\Git\Siste\Directivas\Directivas\Scripts/angular.js" />
+/// <reference path="E:\Git\Siste\Directivas\Directivas\Scripts/angular.js" />
+/*globals angular*/
 (function () {
+	
     'use strict';
 
-    angular.module('sc.directivas').directive('scPanel', scPanel);
+    angular
+		.module('sc.directivas')
+		.directive('scPanel', scPanel);
+	
     scPanel.$inject = ['$window', '$compile', '$timeout', 'tamanoPanel'];
 
     function scPanel($window, $compile, $timeout, tamanoPanel) {
         // Usage:
         //     <sc-panel></sc-panel>
         // Creates:
-        // 
+		
         var directive = {
             controller: ['$scope', '$element', '$attrs', panelCtrl],
-            link: link,
             restrict: 'E',
             controllerAs: 'vm',
             bindToController: {
@@ -24,21 +28,17 @@
             scope: {},
             templateUrl: 'app/DirectivasSC/Templates/scPanel.html'
         };
+		
         return directive;
 
-        function panelCtrl($scope, $element, $attrs) {
+        function panelCtrl() {
+			
             var vm = this;
+			
             var clasetmp = '';
-            //setTimeout(function () {
-            //    $scope.$apply(function () {
-            //        if (vm.control.$invalid) {
-            //            clasetmp += 'f-controlIconRight error';
-            //        }
-            //    });
-            //}, 2000);
 
-            this.claseTamano = function () {
-                switch (this.tamano) {
+            vm.claseTamano = function () {
+                switch (vm.tamano) {
                     case tamanoPanel.completo:
                         clasetmp = 'f-control f-lg-100';
                         break;
@@ -52,16 +52,11 @@
                         clasetmp = 'f-control f-lg-25 f-md-50 f-xs-100';
                         break;
                 }
-
-                clasetmp += ' pull-left';
-
-                return clasetmp;
+				
+                return (clasetmp += ' pull-left');
             };
         }
 
-        function link(scope, elm, attrs) {
-
-        }
     }
 
 })();

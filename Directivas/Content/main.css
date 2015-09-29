@@ -114,7 +114,22 @@
 .txtRojo {
     color: red;
 }
-
+/*tipo moneda*/
+[tipo=moneda]{
+	white-space: nowrap;
+}
+.icn-moneda{
+	display: inline-block;
+	vertical-align: top;
+	padding: 2.8% 2%;
+	margin-right:-5px; 
+	font-weight: bold;
+	font-size: 20px
+}
+.icn-moneda + input{
+	width: 89% !important;
+}
+/*--------------*/
 .f-controlIconRight .f-input {
     position: relative;
     z-index: 1;

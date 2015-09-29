@@ -1,4 +1,5 @@
-﻿(function () {
+/*globals angular*/
+(function () {
     'use strict';
 
     angular
@@ -7,7 +8,7 @@
 
     scRadio.$inject = ['$window'];
 
-    function scRadio($window) {
+    function scRadio( $window ) {
         var directive = {
             link: link,
             restrict: 'E',
