@@ -23,7 +23,7 @@
 			
 			//var currencyIcon = '<i class="icn-currency">$</i>';
 			
-            if (!ctrl) return;
+            if (!ctrl){ return; }
 
             if (isNaN(scope.value)) {
                 scope.value = '';
@@ -32,8 +32,10 @@
 			//elem.parent().prepend(currencyIcon);
 			
             ctrl.$formatters.unshift(function (a) {
-
-                if (a === "" || ctrl.$modelValue === undefined){
+				console.log(a);
+				var condicion = ((a === "") || (ctrl.$modelValue === undefined) || (a.lenght > 10));
+				
+                if (condicion){
                     return;
 				}
 				

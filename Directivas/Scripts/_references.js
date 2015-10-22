@@ -17,6 +17,7 @@
 /// <reference path="../App/DirectivasSC/Validadores/scSoloLetras.js" />
 /// <reference path="../App/DirectivasSC/Validadores/scSoloLetrasEnteros.js" />
 /// <reference path="../App/DirectivasSC/Validadores/scsoloMoneda.js" />
+/// <reference path="../app/directivassc/validadores/solonit.js" />
 /// <reference path="../App/Modules/app - release.js" />
 /// <reference path="../App/Modules/app.js" />
 /// <reference path="../App/Modules/appmaquetacion.js" />

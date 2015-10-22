@@ -116,8 +116,12 @@
         }]);
     }]);
 
-    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num', moneda: 'moneda' });
+    angular.module('sc.directivas').constant('tipoInput', { texto: 'texto', textonum: 'textonum', todo: 'todo', num: 'num', moneda: 'moneda',nit:'nit' });
     angular.module('sc.directivas').constant('tamanoPanel', { completo: 'completo', medio: 'medio', tercio: 'tercio', cuarto: 'cuarto' });
-    angular.module('sc.directivas').constant('tipoCombo', { normal: 'normal', multiple: 'multiple' });
+    angular.module('sc.directivas').constant('tipoCombo', { normal: 'normal', multiple: 'multiple' }).constant('APPROUTES', {
+        RESOURCES: {
+            directivesTemplates: '/templates'
+        }
+    });
 
 })();

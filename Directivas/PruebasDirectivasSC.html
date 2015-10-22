@@ -31,10 +31,10 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
-    <link rel='stylesheet' href='Content/textAngular.css'>
-    <script src='Scripts/textAngular-rangy.min.js'></script>
-    <script src='Scripts/textAngular-sanitize.min.js'></script>
-    <script src='Scripts/textAngular.min.js'></script>
+    <link rel="stylesheet" href="Content/textAngular.css">
+    <script src="Scripts/textAngular-rangy.min.js"></script>
+    <script src="Scripts/textAngular-sanitize.min.js"></script>
+    <script src="Scripts/textAngular.min.js"></script>
 
     <script src="Scripts/modernizr-2.8.3.js"></script>
     <script src="Scripts/select.min.js"></script>
@@ -93,7 +93,6 @@
                 <sc-panel control="formulario.scInputtextonum" tamano="completo">
                     <sc-texto id="textonum" ng-model="d.TextoNumero" requerido="true" tipo="textonum" label="Letras y números"></sc-texto>
                 </sc-panel>
-
                 <sc-panel control="formulario.scInputletras" tamano="completo">
                     <sc-texto id="letras" ng-model="d.Texto" requerido="true" tipo="texto" label="Letras"></sc-texto>
                 </sc-panel>
@@ -107,12 +106,12 @@
                 </sc-panel>
                 <br />
                 <sc-panel control="formulario.scComboNormal" tamano="medio" tieneicono="true">
-                    <sc-combo id="normal" ng-model="d.ValorComboNormal" requerido="true" tipo="normal" label="Combo Normal" opciones="d.NormalOpciones" mostrar="Nombre"></sc-combo>
+                    <sc-combo id="normal" ng-model="d.ValorComboNormal" requerido="true" label="Combo Normal" onselect="d.fireAlert(d.ValorComboNormal, 0)" opcion="Nombre" valor-retorno="Id" lista="d.NormalOpciones" tipo="normal"></sc-combo>
                 </sc-panel>
 
                 <sc-panel control="formulario.scComboMultiple" tamano="medio" tieneicono="true">
-                    <sc-combo id="Multiple" ng-model="d.ValorComboMultiple" requerido="true" tipo="multiple" label="Combo Multiple" opciones="d.MultipleOpciones" mostrar="Nombre"></sc-combo>
-                </sc-panel>
+                    <sc-combo id="Multiple" ng-model="d.ValorComboMultiple" requerido="true" label="Combo Multiple" onselect="d.fireAlert(d.ValorComboNormal, 1)"  opcion="Nombre" valor-retorno="Id" lista="d.MultipleOpciones" tipo="normal" ></sc-combo>
+                </sc-panel> 
 
                 <sc-panel control="formulario.scRadioradio" tamano="medio" class="clearfix">
                     <sc-radio id="radio" ng-model="d.opcion" opciones="d.opciones" opt-value="Nombre" requerido="true" label="Radio"></sc-radio>
@@ -132,11 +131,11 @@
                         Combo Multiple: {{d.ValorComboMultiple}}<br />
                         Radio: {{d.opcion}}
                     </div>
-
+					
                 </div>
             </form>
             <pre>
-            {{ formulario | json }}
+            
         </pre>
         </div>
     </div>
@@ -167,14 +166,15 @@
             ct.BarraVisible = false;
 
             ct.valor = 100;
-
+			ct.ValorCampo
             ct.opciones = [
                 { Id: 1, Nombre: 'Opcion 1', Tipo: "Tipo 1" },
                 { Id: 2, Nombre: 'Opcion 2', Tipo: "Tipo 2" },
                 { Id: 3, Nombre: 'Opcion 3', Tipo: "Tipo " }
             ];
-
+			ct.ValorComboNormal = 1 ;
             ct.NormalOpciones = [
+				'nombre',
                 { Id: 1, Nombre: 'Normal 1', Tipo: "Tipo 1" },
                 { Id: 2, Nombre: 'Normal 2', Tipo: "Tipo 2" },
                 { Id: 3, Nombre: 'Normal 3', Tipo: "Tipo " }
@@ -194,7 +194,9 @@
                 ct.moneda = 456700;
                 ct.opcion = ct.opciones[1];
             }
-
+			ct.fireAlert = function (obj, i) {
+				obj = {};
+			}
             ct.MostrarBarra = function () {
                 if (ct.BarraVisible) {
                     ct.BarraVisible = false;

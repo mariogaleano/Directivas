@@ -1,9 +1,13 @@
-﻿<label>{{vmt.label}} <span class="txtRojo" ng-show="{{vmt.requerido}}">*</span></label>
-<div class="f-input clearfix" id="divct">
-    <input type="text" ng-model="vmt.value" ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }" ng-attr-id="{{::'scInput' + vmt.id}}"
-           ng-attr-name="{{::'scInput' + vmt.id}}" ng-required="{{vmt.requerido}}"
-           ng-keyup="vmt.cancel($event)" />
-    <div class="box-contAlertIcon" ng-show="vmt.control.$invalid && vmt.control.$dirty">
-        <i class="icon-credi-04" ng-click="vmt.tolltip()"></i>
+﻿<div class="f-lg-100 clearfix form-group" id="divct">
+    <label for="{{::'scInput' + vm.id}}">
+        <span translate>{{vm.label}}</span>
+        <span class="txtRojo" ng-show="{{vm.requerido}}">*</span>
+    </label>
+    <input type="text" ng-model="vm.value" ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }"
+           ng-attr-id="{{::'scInput' + vm.id}}"
+           ng-attr-name="{{::'scInput' + vm.id}}" ng-required="vm.requerido"
+           ng-keyup="vm.cancel($event)" />
+    <div class="box-contAlertIcon" ng-show="vm.control.$invalid && vm.control.$dirty">
+        <i class="icon-credi-04" ng-click="vm.tolltip()"></i>
     </div>
 </div>

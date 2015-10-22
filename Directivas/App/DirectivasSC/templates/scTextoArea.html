@@ -1,7 +1,7 @@
-﻿<label>{{vm.label}} <span class="txtRojo" ng-show="{{vm.requerido}}">*</span></label>
-<div class="f-input clearfix">
-    <textarea class="" ng-attr-name="{{::'scArea' + id}}" ng-attr-id="{{::'scArea' + id}}" ng-model="value" ng-required="{{requerido}}" />
-    <a style="cursor: pointer" ng-show="control.$invalid" ng-class="{'alerta':control.$invalid }" popover="{{vm.tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{vm.tooltipclass}}">
+﻿<div class="f-input clearfix">
+    <label for="{{::'scArea' + id}}"><span translate>{{label}}</span> <span class="txtRojo" ng-show="requerido">*</span></label>
+    <textarea class="" ng-attr-name="{{::'scArea' + id}}" ng-attr-id="{{::'scArea' + id}}" ng-model="value" ng-required="requerido" />
+    <a href="" ng-show="control.$invalid" ng-class="{'alerta':control.$invalid }" popover="{{tooltip}}" popover-placement="top" popover-trigger="click" popover-class="{{tooltipclass}}">
         <i class="icon-credi-01"></i>
     </a>
 </div>

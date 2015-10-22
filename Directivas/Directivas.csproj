@@ -49,9 +49,11 @@
     <Content Include="App\Controllers\controller.js" />
     <Content Include="App\Controllers\mainController.js" />
     <Content Include="App\DirectivasSC\Contenedores\scPanel.js" />
+    <Content Include="App\DirectivasSC\Validadores\soloNit.js" />
     <Content Include="App\DirectivasSC\scCheckbox.js" />
     <Content Include="App\DirectivasSC\scCombo.js" />
     <Content Include="App\DirectivasSC\scFecha.js" />
+    <Content Include="App\DirectivasSC\templates\scChecbox.html" />
     <Content Include="App\DirectivasSC\templates\scCombo.html" />
     <Content Include="App\DirectivasSC\Validadores\scSoloMoneda.js" />
     <Content Include="App\DirectivasSC\scHora.js" />
@@ -82,7 +84,7 @@
     <Content Include="fonts\icomoonForms\demo-files\demo.css" />
     <Content Include="fonts\icomoonForms\demo-files\demo.js" />
     <Content Include="fonts\icomoonForms\demo.html" />
-    <Content Include="fonts\icomoonForms\fonts\icomoon.svg" />
+    <Content Include="fonts\icomoonForms\fonts\icomoon2.svg" />
     <Content Include="fonts\icomoonForms\Read Me.txt" />
     <Content Include="fonts\icomoonForms\style.css" />
     <Content Include="img\imgCliente_03.jpg" />
@@ -138,10 +140,11 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="img\.DS_Store" />
-    <Content Include="fonts\icomoonForms\fonts\icomoon.eot" />
-    <Content Include="fonts\icomoonForms\fonts\icomoon.ttf" />
-    <Content Include="fonts\icomoonForms\fonts\icomoon.woff" />
+    <Content Include="fonts\icomoonForms\fonts\icomoon2.eot" />
+    <Content Include="fonts\icomoonForms\fonts\icomoon2.ttf" />
+    <Content Include="fonts\icomoonForms\fonts\icomoon2.woff" />
     <Content Include="fonts\icomoonForms\selection.json" />
+    <Content Include="App\DirectivasSC\README.md" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="PruebasDirectivasSC.html" />
     <Content Include="Scripts\bootstrap.js" />

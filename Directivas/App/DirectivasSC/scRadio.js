@@ -3,12 +3,15 @@
     'use strict';
 
     angular
-        .module('sc.directivas')
+        .module('scApp.common')
         .directive('scRadio', scRadio);
 
-    scRadio.$inject = ['$window'];
+    scRadio.$inject = ['APPROUTES'];
 
-    function scRadio( $window ) {
+    function scRadio(APPROUTES) {
+
+        var appFolder = APPROUTES.APP_FOLDER.directivesTemplates
+
         var directive = {
             link: link,
             restrict: 'E',
@@ -19,7 +22,7 @@
                 requerido: "=",
                 label: '@'
             },
-            templateUrl: 'app/DirectivasSC/Templates/scRadio.html'
+            templateUrl: appFolder + '/radio.html'
         };
         return directive;
 
