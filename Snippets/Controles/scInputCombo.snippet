@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>sc-combo Snippet</Title>
+      <Author>Anderson Velez</Author>
+      <Description>Snippet de una lista de seleccion / combo de seleccion.</Description>
+      <Shortcut>sccombo</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ngmodel</ID>
+          <ToolTip>variable ngmodel</ToolTip>
+          <Default>ngmodel</Default>
+        </Literal>
+        <Literal>
+          <ID>label</ID>
+          <ToolTip>Palabra clave para el nombre del input, este no debera tener espacios</ToolTip>
+          <Default>label</Default>
+        </Literal>
+        <Literal>
+          <ID>lista</ID>
+          <ToolTip>Corresponde al Array desde el cual se obtendran las opciones del combo</ToolTip>
+          <Default>lista</Default>
+        </Literal>
+        <Literal>
+          <ID>opcion</ID>
+          <ToolTip>Corresponde al nombre de la propiedad que se mostrara como el nombre de la opcion a elegir en el listado</ToolTip>
+          <Default>opcion</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="HTML">
+        <![CDATA[
+ <sc-combo id="$name$" ng-model="$ngmodel$" label="$label$" lista="" ></sc-combo>
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+
+
+

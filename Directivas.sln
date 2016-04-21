@@ -22,8 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snippets", "Snippets", "{18
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controles", "Controles", "{A9C936B0-7318-4227-BE27-06683013D5B3}"
 	ProjectSection(SolutionItems) = preProject
-		Snippets\Controles\Textonum.snippet = Snippets\Controles\Textonum.snippet
-		Snippets\Controles\TextoTodo.snippet = Snippets\Controles\TextoTodo.snippet
+		Snippets\Controles\scInputCombo.snippet = Snippets\Controles\scInputCombo.snippet
+		Snippets\Controles\scInputTexto.snippet = Snippets\Controles\scInputTexto.snippet
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Formularios", "Formularios", "{71CC919C-1710-4FDF-AA7C-AB3DD5CAC494}"

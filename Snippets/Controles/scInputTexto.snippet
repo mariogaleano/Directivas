@@ -4,15 +4,15 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>sc-texto Snippet</Title>
-      <Author>Mario Galeano</Author>
-      <Description>Snippet de un input tipo número.</Description>
+      <Author>Anderson Velez</Author>
+      <Description>Snippet de un input tipo texto.</Description>
       <Shortcut>sctexto</Shortcut>
     </Header>
     <Snippet>
       <Declarations>
         <Literal>
           <ID>ngmodel</ID>
-          <ToolTip>Valor del ngmodel</ToolTip>
+          <ToolTip>variable ngmodel</ToolTip>
           <Default>ngmodel</Default>
         </Literal>
         <Literal>
@@ -21,19 +21,16 @@
           <Default>name</Default>
         </Literal>
         <Literal>
-          <ID>requerido</ID>
-          <ToolTip>Determina si el valor es requerido</ToolTip>
-          <Default>true</Default>
+          <ID>tipo</ID>
+          <ToolTip>Corresponde al tipo de dato que acepta recibir el input</ToolTip>
+          <Default>tipo</Default>
         </Literal>
       </Declarations>
       <Code Language="HTML">
         <![CDATA[
-<sc-texto name="$name$" id="$name$" ng-model="$ngmodel$" requerido="$requerido$" tipo="textonum"></sc-texto>
+ <sc-combo name="$name$" id="$name$" ng-model="$ngmodel$" tipo="$tipo$"></sc-combo>
         ]]>
       </Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
-
-
-
