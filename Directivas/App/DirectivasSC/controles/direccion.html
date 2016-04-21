@@ -1,0 +1,60 @@
+<label for="{{'DireccionCompletaMain' + dir.id}}">Dirección:</label>
+<div class="f-t" ng-init="panel = $parent.$parent">
+    <div class="f-tr">
+
+        <div class="f-td" ng-class="{'f-tdInputError': panel.inputValidado || (panel.control.$invalid && panel.control.$touched)}">
+            <input id="{{'DireccionCompletaMain' + dir.id}}" type="text" name="{{'DireccionCompletaMain' + dir.id}}" requerido="dir.requerido" ng-model="dir.value.DireccionCompleta" ng-disabled="true" todo/>
+        </div><!-- fin f-td -->
+
+        <div class="f-td">
+            <button class="btn-link txtNaranja txtM icoEsp icon-credinetFont-01  btn-direccion{{dir.tipo.toLowerCase()}}" data-toggle="{{dir.acceso == 'modal' && 'modal' || 'collapse'}}" data-target="{{::'#directiva' + dir.id}}" ng-click="dir.ingresarDireccion()"></button>
+        </div><!-- fin f-td -->
+
+    </div><!-- fin f-tr -->
+</div><!-- fin f-t -->
+<br>
+<div ng-if="dir.modalVisible">
+    {{dir.modalVisible | json}}
+    <form name="formDireccion" role="form" novalidate>
+        <div class="{{dir.acceso === 'contenedor' && 'collapse' || 'modal fade'}}" id="{{::'directiva' + dir.id}}">
+            <div class="{{dir.acceso === 'modal' && 'modal-dialog' || ''}}">
+                <div class="{{dir.acceso === 'modal' && 'modal-content' || 'clearfix'}}">
+                    <div class="{{dir.acceso === 'modal' && 'modal-header' || 'text-left'}}">
+                        <h1>Ingrese Dirección:</h1>
+                    </div>
+                    <div class="{{dir.acceso === 'modal' && 'modal-body' || ''}}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <sc-panel control="formDireccion['scComboPais' + dir.id]" tamano="completo">
+                                    <sc-combo id="{{'Pais' + dir.id}}" ng-model="dir.peticion.PaisId" onselect="dir.mostrarDepartamentos(dir.peticion.PaisId);" valor-retorno="PaisId" requerido="true" tipo="Normal" label="Pais" opcion="Nombre" lista="dir.lugares.paises"></sc-combo>
+                                </sc-panel>
+                                <sc-panel control="formDireccion['scComboDepartamento' + dir.id]" tamano="completo">
+                                    <sc-combo id="{{'Departamento' + dir.id}}" ng-model="dir.peticion.DepartamentoId" onselect="dir.mostrarMunicipios(dir.peticion.DepartamentoId);" valor-retorno="DepartamentoId" requerido="true" tipo="Normal" label="Departamento" opcion="Nombre" lista="dir.lugares.departamentos"></sc-combo>
+                                </sc-panel>
+                                <sc-panel control="formDireccion['scComboCiudad' + dir.id]" tamano="completo">
+                                    <sc-combo id="{{'Ciudad' + dir.id}}" ng-model="dir.peticion.CiudadId" onselect="dir.mostrarBarrios(dir.peticion.CiudadId);" valor-retorno="CiudadId" requerido="true" tipo="Normal" label="Municipio" opcion="Nombre" lista="dir.lugares.municipios"></sc-combo>
+                                </sc-panel>
+                                <sc-panel control="formDireccion['scComboBarrio' + dir.id]" tamano="completo">
+                                    <sc-combo id="{{'Barrio' + dir.id}}" ng-model="dir.peticion.BarrioId" requerido="true" tipo="Normal" label="Barrio" valor-retorno="BarrioId" opcion="Nombre" lista="dir.lugares.barrios"></sc-combo>
+                                </sc-panel>
+                                <sc-panel control="formDireccion['scInputDireccionCompleta' + dir.id]" tamano="completo">
+                                    <sc-texto id="{{'DireccionCompleta' + dir.id}}" requerido="true" ng-model="dir.peticion.DireccionCompleta" tipo="todo" label="Direccion"></sc-texto>
+                                </sc-panel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="{{dir.acceso === 'modal' && 'modal-footer' || ''}}">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-default" data-toggle="{{dir.acceso === 'contenedor' && 'collapse' || 'modal'}}" data-target="{{'#directiva' + dir.id}}" ng-click="dir.generarCodPostal()" ng-disabled="formDireccion.$invalid">
+                                <span translate>Ingresar</span>
+                            </button>
+                            <button type="button" class="btn btn-link" data-toggle="{{dir.acceso === 'contenedor' && 'collapse' || 'modal'}}" data-target="{{'#directiva' + dir.id}}" ng-click="dir.cancelar()">
+                                <span translate>Cancelar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

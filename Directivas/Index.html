@@ -3,135 +3,31 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-    <script src="Scripts/jquery-2.1.4.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href='Content/textAngular.css'>
+    
+</head>
+<body>
+  
+    <!-- Librerias -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
-    <link rel='stylesheet' href='Content/textAngular.css'>
+    <script src="Scripts/angular-strap.js"></script>
+    <script src="Scripts/angular-strap.tpl.js"></script>
+    <script src="Scripts/mask.js"></script>
     <script src='Scripts/textAngular-rangy.min.js'></script>
     <script src='Scripts/textAngular-sanitize.min.js'></script>
     <script src='Scripts/textAngular.min.js'></script>
-</head>
-<body ng-controller="mainController as vm">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" ui-sref="full">Home</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a ui-sref="full">Prueba todos los componentes</a></li>
-                    <li><a ui-sref="label">Directiva label</a></li>
-                    <li><a ui-sref="numerosletras">Números y letras</a></li>
-                    <li><a ui-sref="letras">Letras</a></li>
-                    <li><a ui-sref="numeros">Números</a></li>
-                    <li><a ui-sref="inputlabel">Input con Label</a></li>
-                    <li><a ui-sref="inputnumberlabel">Input númerico con Label</a></li>
-                    <li><a ui-sref="select">Select con Label</a></li>
-                    <li><a ui-sref="picker">Datepicker</a></li>
-                    <li><a ui-sref="telefono">T&eacute;lefono</a></li>
-                    <li><a ui-sref="richtext">Texto enriquecido</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <form name="formulario" class="form container" novalidate ng-init="todo='hola 123-';texto='hola 123-';textonum='hola 123-'">
-
-        <div class="control-group" ng-class="{'has-error':formulario.scInputTodo.$error.required}">
-                    <sc-texto ng-model="req" id="Todo" tipo="todo" requerido="true"></sc-texto>
-                    <div ng-show="formulario.scInputTodo.$error.required" class="alert alert-danger">
-                       campo requerido
-                    </div>
-                </div>
-
-                <br />
-
-                <div class="control-group" ng-class="{'has-error':formulario.scInputTexto.$invalid}">
-                    <sc-texto ng-model="texto" id="Texto" tipo="texto"></sc-texto>
-                    <div ng-show="formulario.scInputTexto.$invalid" class="alert alert-danger">
-                        Sólo se aceptan letras
-                    </div>
-                </div>
-
-                <br />
-        
-        <!--<div class="control-group" ng-class="{'has-error':formulario.scInputTextonum.$invalid}">
-            <sc-texto ng-model="textonum" id="Textonum" tipo="textonum" ng-required></sc-texto>
-            <div ng-show="formulario.scInputTextonum.$invalid" class="alert alert-danger">
-                Sólo se aceptan letras y numeros
-            </div>
-        </div>-->
-        <!--<br />
-        <div class="control-group" ng-class="{'has-error':formulario.scAreaValor.$invalid}">
-            <sc-texto-area ng-model="valorlong" id="Valor" ng-required></sc-texto-area>
-            {{valorlong}}
-            <div ng-show="formulario.scAreaValor.$invalid" class="alert alert-danger">
-                Error
-            </div>
-        </div>
-        <br />-->
-
-        <div class="control-group" ng-class="{'has-error':formulario.scAreaTexto.$invalid}">
-            <sc-texto-area ng-model="textov" id="Texto" requerido="true"></sc-texto-area>
-            {{textov}}
-            <div ng-show="formulario.scAreaTexto.$invalid" class="alert alert-danger">
-                Error 2
-            </div>
-        </div>
-        <br />
-
-        <div class="control-group" ng-class="{'has-error':formulario.scAreaTextoOpcional.$invalid}">
-            <span>Text area opcional</span>
-            <sc-texto-area ng-model="TextoOpcional" id="TextoOpcional" requerido="true"></sc-texto-area>
-            {{TextoOpcional}}
-            <div ng-show="formulario.scAreaTextoOpcional.$invalid" class="alert alert-danger">
-                Texto pcional
-            </div>
-        </div>
-        <br />
-
-        <div class="control-group" ng-class="{'has-error':formulario.msg.$invalid}">
-            <textarea ng-model="msg" name="msg" 
-                     id="msg" requerido="true"></textarea>
-            {{msg}}
-            <div ng-show="formulario.msg.$invalid" class="alert alert-danger">
-                Error 2
-            </div>
-        </div>
-
-
-
-        <button type="submit" ng-disabled="formulario.$invalid" class="btn btn-primary">Aceptar</button>
-    </form>
-
-    <div ui-view class="container"></div>
-
-
-    <script src="Scripts/mask.js"></script>
-
+    <!-- Aplicacion Angular -->
     <script src="App/Modules/app.js"></script>
     <script src="App/Controllers/mainController.js"></script>
-
     <script src="App/Controllers/controller.js"></script>
     <script src="App/Directives/scLabel.js"></script>
     <script src="App/Directives/scInputLabel.js"></script>
@@ -142,7 +38,6 @@
     <script src="App/Directives/scDatePicker.js"></script>
     <script src="App/Directives/scPhoneMask.js"></script>
     <script src="App/Directives/scSelectLabel.js"></script>
-
     <script src="App/DirectivasSC/scTexto.js"></script>
     <script src="App/DirectivasSC/scTextoArea.js"></script>
 </body>

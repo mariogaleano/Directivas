@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-12" >
+		<h2 class="titForms text-uppercase txtXS"><span class="tipoTel ng-scope" translate>{{label}}:</span></h2>
+	</div>
+	<form name="formScTelefono" novalidate >
+		
+		<div class=" noPadLeft noPadRight {{modelo.tipoTelefono === 1 && 'col-md-4' || 'col-md-5'}}" ng-if="!(deshabilitar && iniciar!==undefined)">
+			<sc-panel control="formScTelefono[ 'scComboTipo' + id]" tamano="completo">
+				<sc-combo id="{{'Tipo' + id}}" deshabilitar="deshabilitar" ng-model="modelo.tipoTelefono" iniciar="iniciar" onselect="cambioTipo()" requerido="requerido" tipo="Normal" label="Tipo" valor-retorno="Id" opcion="Nombre" lista="listaTipos"></sc-combo>
+			</sc-panel>
+		</div>
+		<div class="noPadLeft noPadRight {{modelo.tipoTelefono === 1 && 'col-md-5' || 'col-md-7'}}" ng-if="modelo.tipoTelefono === 1" >
+			<sc-panel control="formScTelefono['scInputNumero' + id]" tamano="completo">
+				<sc-texto id="{{'Numero' + id}}" requerido="requerido" ng-model="modelo.numeroTelefono" tipo="telefono" label="Telefono"></sc-texto>
+			</sc-panel>
+		</div>
+		<div class="noPadLeft noPadRight {{modelo.tipoTelefono === 1 && 'col-md-6' || 'col-md-7'}}" ng-if="modelo.tipoTelefono === 2" >
+			<sc-panel control="formScTelefono['scInputNumeroMovil' + id]" tamano="completo">
+				<sc-texto id="{{'NumeroMovil' + id}}" requerido="requerido" ng-model="modelo.numeroTelefono" tipo="movil" label="Telefono"></sc-texto>
+			</sc-panel>
+		</div>
+		<div class="col-md-3 noPadLeft noPadRight" ng-if="modelo.tipoTelefono === 1">
+			<sc-panel control="formScTelefono['scInputExtension' + id]" tamano="completo">
+				<sc-texto id="{{'Extension' + id}}" requerido="false" maximo="4" ng-model="modelo.extensionTelefono" tipo="num" label="Ext."></sc-texto>
+			</sc-panel>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,39 @@
+<label for="{{::'scCombo' + id}}">
+    <span translate>{{label}}</span>
+    <span class="txtRojo" ng-show="requerir">*</span>
+</label>
+<div class="f-input clearfix f-t" ng-init="panel = $parent.$parent">
+    <!--[class: icoAlert/icoAlertError]-->
+  <div class="f-tr">
+        <div class="f-td" ng-class="{'f-tdInputError': panel.inputValidado || (panel.control.$invalid && panel.control.$touched)}">  
+    <!--[class: error (si el input esta mal diligenciado se adiciona esta clase)]-->
+            <div class="sc-combo" ng-class="{'error': $parent.$parent.inputValidado}">
+                <input type="text" placeholder="busqueda en combo" autocomplete="off"
+                       todo
+                       ng-disabled="bloquear || listaFiltrada.length <= 0"
+                       ng-attr-name="{{::'scCombo' + id}}"
+                       ng-attr-id="{{::'scCombo' + id}}"
+                       ng-model="modelo"
+                       ng-keyup="filtrarLista()"
+                       ng-keydown="accionesTeclas($event)"
+                       ng-required="requerir"
+                       ng-blur="blur()"
+                       ng-class=""
+                       tabindex="{{index}}" />
+
+                <label for="{{::'scCombo' + id}}" class="btn btn-default f-control btn-combo"
+                       ng-class="{disabled: bloquear || listaFiltrada.length <= 0 }"
+                       ng-click="click()"
+                       ng-show="!buscar" ng-bind="seleccion"></label>
+            </div>
+        </div><!-- fin f-td -->
+        <div class="f-td" ng-class="{'f-tdError': panel.inputValidado || (panel.control.$invalid && panel.control.$touched)}" ng-if="panel.inputValidado || (panel.control.$invalid && panel.control.$touched)">
+            <span class="icon-credi-03 icoAlert icoAlertError" ng-if="$parent.$parent.inputValidado" ng-click="tooltip()"></span>
+        </div><!-- fin f-td -->
+    </div><!-- fin f-tr -->
+</div><!-- fin f-t -->
+<div class="list-group lista-combo" ng-if="buscar && listaFiltrada.length >= 0" ng-init="abrirLista()">
+    <a href="" class="list-group-item text-center {{activar[$index]}}" tabindex="-1"
+       ng-repeat="item in listaFiltrada"
+       ng-click="eligiendo($index,item)">{{item[opcion]}}</a>
+</div>

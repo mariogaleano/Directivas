@@ -1,0 +1,55 @@
+<form name="formDocumento" role="form" novalidate>
+    <div class="clearfix" ng-show="vm.modulo==='legales'">
+        <label for="{{'btn' + vm.modulo}}" ng-if="label === undefined">
+            <span translate>{{vm.label}}</span>
+            <span class="txtRojo" ng-show="{{vm.requerido}}">*</span>
+        </label>
+        {{vm.id}}
+        <button id="{{'btn' + vm.modulo}}" requerido="true" class="documento_formBtn f-control bgVerde txtBlanco text-uppercase glyphicon glyphicon-file" data-toggle="modal" data-target="{{::'#contenedor' + vm.modulo}}" ng-click="vm.ingresarDocumento()" translate>
+            Cargar_Documento
+        </button>
+    </div>
+    <div class="clearfix" ng-show="vm.modulo==='documentos'">
+        {{vm.id}}
+        <button class="documento_formBtn btn btn-link pull-right glyphicon glyphicon-plus" data-toggle="modal" data-target="{{::'#contenedor' + vm.modulo}}" ng-click="vm.ingresarDocumento()" translate>
+            Agregar_Documento
+        </button>
+    </div>
+    <!--Modal Documentos-->
+    <div id="{{::'contenedor' + vm.modulo}}" class="modal fade" role="dialog"  ng-show="vm.modalVisible">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="text-center"><span translate>Documento</span></h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <sc-panel control="formDocumento['scComboTiposDoc' + vm.id]" tamano="completo">
+                                <sc-combo id="TiposDoc" deshabilitar="vm.deshabilitarTiposDoc" iniciar="vm.ctipoDocumentos.Contrato_Firmado" ng-model="vm.archivo.TipoDocumentoRazonSocialId" valor-retorno="Id" requerido="false" tipo="Normal" label="Tipo_Documento" opcion="Nombre" lista="vm.tipoDocumentos"></sc-combo>
+                            </sc-panel>
+                            <sc-panel control="formDocumento['scInputRutaDocumento' + vm.id]" tamano="medio">
+                                <sc-texto id="RutaDocumento" deshabilitar="true" ng-model="vm.propiedades.name" tipo="todo" label="Documento"></sc-texto>
+                            </sc-panel>
+                            <sc-panel control="formDocumento['scInputAdjContrato' + vm.id]" tamano="medio">
+                               <br/>
+                                <sc-archivo id="AdjContrato" requerido="true" loaded="vm.contrato" ng-model="vm.archivo.file" modulo="modulo" prop="vm.propiedades" tipo="archivo" label="Examinar"></sc-archivo>
+                            </sc-panel>
+                            <sc-panel control="formDocumento['scInputDescripcion' + vm.id]" tamano="completo">
+                                <sc-texto-area id="Descripcion" requerido="true" ng-model="vm.archivo.Descripcion" tipo="textonum" label="Observacion"></sc-texto-area>
+                            </sc-panel>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" ng-click="vm.crearDocumentoAdjunto()" ng-disabled="formDocumento.$invalid">
+                        <span translate>Crear</span>
+                    </button>
+                    <button type="button" class="btn btn-link" ng-click="vm.cancelar(formDocumento)">
+                        <span translate>Cancelar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

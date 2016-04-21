@@ -1,0 +1,21 @@
+<div class="{{classTipo}} noPadLeft noPadRight f-controlIconRight pull-left">
+    <label for="{{'scInput' + id}}"><span translate>{{label}}</span><span ng-if="requerir" class="txtRojo">*</span></label>
+    <div class="f-input fecha-control clearfix" ng-init="control = $parent.$parent.control" ng-class="{'error': control.$touched && control.$invalid }">
+        <!--[class: icoAlert/icoAlertError]-->
+        <span class="icon-credi-03 icoAlert icoAlertError" ng-if="control.$touched && control.$invalid" ng-click="tooltip()"></span>
+        <!--[class: error (si el input esta mal diligenciado se adiciona esta clase)]-->
+        <input type="text"
+               id="{{'scInput' + id}}"
+               name="{{'scInput' + id}}"
+               class="pull-left"
+               ng-class="{'error': control.$touched && control.$invalid }"
+               solo-fechas
+               bs-datepicker
+               data-min-date="fechaMinima"
+               ng-model="desde"
+               ng-required="requerir"
+               ng-disabled="deshabilitar"
+               tabindex="{{index}}" />
+        <label for="{{'scInput' + id}}" class="btn-link pull-left" ng-class="{'disabled': deshabilitar}"><i class="icoEsp icon-credinetFont-09"></i></label>
+    </div>
+</div>

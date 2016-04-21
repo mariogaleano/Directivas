@@ -1,0 +1,14 @@
+<div class="btn-group" >
+	<!--[class: icoAlert/icoAlertError]-->
+	<span class="icon-credi-03 icoAlert icoAlertError" ng-if="$parent.$parent.inputValidado" ng-click="tooltip()"></span>
+	<!--[class: error (si el input esta mal diligenciado se adiciona esta clase)]-->
+	<label class="btn btn-default" for="{{::'scInput' + vm.id}}">
+		<i class="glyphicon glyphicon-file"></i>
+	</label>
+	<label class="btn btn-primary" for="{{::'scInput' + vm.id}}">
+		<span translate>{{vm.label}}</span>
+		<span class="number badge"></span>
+	</label>
+	<span class="txtRojo" ng-show="{{vm.requerido}}">*</span>
+	<input type="file" class="hide" accept="{{aceptar}}" ng-model="vm.value" ng-attr-id="{{::'scInput' + vm.id}}" ng-attr-name="{{::'scInput' + vm.id}}" ng-required="vm.requerido" />
+</div>

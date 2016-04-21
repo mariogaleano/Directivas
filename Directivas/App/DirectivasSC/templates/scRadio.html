@@ -1,7 +1,0 @@
-﻿<div class="f-input clearfix">
-    <label for="{{::'scRadio' + id + '0'}}">{{label}}<span class="txtRojo" ng-show="requerido">*</span></label>
-    <div class="pull-left" ng-repeat="opcion in opciones">
-        <input type="radio" ng-value="{{opcion}}" class="f-input clearfix" ng-model="$parent.value" ng-attr-name="{{::'scRadio' + id}}" ng-attr-id="{{::'scRadio' + id + $index}}" ng-required="{{requerido}}" />
-        <label for="{{::'scRadio' + id + $index}}">{{opcion[optValue]}}</label>
-    </div>
-</div>

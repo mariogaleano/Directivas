@@ -1,0 +1,16 @@
+<div class="f-controlIconRight" >
+	<label for="{{::'scInput' + id}}">{{label}}</label>
+	<div class="f-input clearfix">
+		<input type="text"  name="{{::'scInput' + id}}" id="{{::'scInput' + id}}" ng-model="filtro" />
+		<div class="col-md-2">
+			<button ng-click="ngModel = filtro" class="bgVerde btn-default">
+				<i class="glyphicon glyphicon-search"></i>
+				<span translate>Buscar</span>
+			</button>
+			<button ng-click="ngModel = '';filtro=''" class="bgVerde btn-default">
+				<i class="glyphicon glyphicon-refresh"></i>
+				<span translate>Limpiar</span>
+			</button>
+		</div>
+	</div>
+</div>

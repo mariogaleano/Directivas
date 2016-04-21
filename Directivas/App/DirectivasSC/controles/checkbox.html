@@ -1,0 +1,8 @@
+<input type="checkbox" ng-model="ngModel"
+       ng-attr-id="{{::'scCheck' + id}}"
+       ng-attr-name="{{::'scCheck' + id}}"
+       ng-disabled="deshabilitar" 
+       ng-change="eventoCambio()"
+       ng-click="eventoClick()"
+/>
+<label for="{{::'scCheck' + id}}"><span translate>{{label}}</span></label>

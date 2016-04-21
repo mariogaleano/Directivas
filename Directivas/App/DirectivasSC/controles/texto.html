@@ -1,0 +1,27 @@
+<label for="{{::'scInput' + id}}">
+    <span translate>{{label}}</span>
+    <span class="txtRojo" ng-show="requerir">*</span>
+</label>
+<div class="f-input clearfix f-t" ng-init="panel = $parent.$parent">
+  <div class="f-tr">
+      
+      <div class="f-td" ng-class="{'f-tdInputError': panel.inputValidado || (panel.control.$invalid && panel.control.$touched)}">
+      <!--[class: error (si el input esta mal diligenciado se adiciona esta clase)]-->
+      <input type="text"
+             ng-model="value"
+             ng-model-options="{updateOn: 'blur', debounce: {'default': 150, 'blur': 0} }"
+             ng-attr-id="{{::'scInput' + id}}"
+             ng-attr-name="{{::'scInput' + id}}"
+             ng-required="requerir"
+             ng-disabled="bloquear"
+             ng-maxlength="maximo"
+             ng-blur="eventoBlur()"
+             tabindex="{{index}}"
+               />
+      </div><!-- fin f-td -->
+      <div class="f-td" ng-class="{'f-tdError': panel.inputValidado || (panel.control.$invalid && panel.control.$touched)}" ng-if="panel.inputValidado || (panel.control.$invalid && panel.control.$touched)">
+        <!--[class: icoAlert/icoAlertError]-->
+        <span class="icon-credi-03 icoAlert icoAlertError" ng-click="tooltip()"></span>
+      </div><!-- fin f-td -->
+  </div><!-- fin f-tr -->
+</div>
